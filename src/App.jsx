@@ -12,6 +12,7 @@ import GardenPage from "./pages/GardenPage";
 import CategoryPage from "./pages/CategoryPage"
 import Navbar from "./components/Navbar";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Footer from './components/Footer';
 
 function App() {
 
@@ -37,6 +38,7 @@ function App() {
           <Route path="/" element={<LandingPage/>} />
           <Route path="/notfound" element={<NotFoundPage/>} />
           </Routes>
+          <Footer />
       </>
   )
 }

@@ -65,4 +65,4 @@ const PopUpCreateForumForm = () => {
   );
 };
 
-export { PopUpCreateForumForm };
+export { PopUpCreateForumForm }

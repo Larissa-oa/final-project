@@ -1,0 +1,99 @@
+/* Contact section */
+.contact-section {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    position: relative;
+  }
+  
+  @media (min-width: 768px) {
+    .contact-section {
+      flex-direction: row;
+      padding: 3rem;
+    }
+  }
+  
+  .contact-info {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 36rem;
+  }
+  
+  .contact-intro {
+    color: var(--color-emerald-200);
+    font-family: var(--font-serif);
+  }
+  
+  .contact-method {
+    display: grid;
+    gap: 0.5rem;
+  }
+  
+  .contact-method-title {
+    color: var(--color-amber-200);
+    font-weight: 500;
+    font-family: var(--font-serif);
+  }
+  
+  .contact-method-value {
+    color: var(--color-emerald-200);
+  }
+  
+  .contact-visual {
+    flex: 1;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+  
+  @media (min-width: 768px) {
+    .contact-visual {
+      display: flex;
+    }
+  }
+  
+  .contact-orbit-container {
+    position: relative;
+  }
+  
+  .contact-orbit-glow {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom right, rgba(251, 191, 36, 0.2), rgba(110, 231, 183, 0.2));
+    border-radius: 50%;
+    animation: pulse 3s infinite;
+  }
+  
+  .contact-orbit-outer {
+    width: 16rem;
+    height: 16rem;
+    border-radius: 50%;
+    background: linear-gradient(to bottom right, rgba(6, 95, 70, 0.3), rgba(15, 118, 110, 0.3));
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(5, 150, 105, 0.5);
+  }
+  
+  .contact-orbit-inner {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    background: linear-gradient(to bottom right, rgba(251, 191, 36, 0.2), rgba(253, 230, 138, 0.2));
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(251, 191, 36, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .contact-icon {
+    height: 4rem;
+    width: 4rem;
+    color: var(--color-amber-200);
+  }
+
+  

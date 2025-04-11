@@ -20,11 +20,11 @@ const ForumContextWrapper = ({ children }) => {
       .catch((err) => {
         console.log(err);
       });
-  }, []); // Empty dependency array to prevent infinite loop
+  }, []); 
 
   useEffect(() => {
     getAllTopics();
-  }, [getAllTopics]); // This only runs once when the component is mounted
+  }, [getAllTopics]);
 
   //*****************CREATE TOPIC ****************/
   async function handleCreateTopic(event, topic) {
@@ -39,10 +39,11 @@ const ForumContextWrapper = ({ children }) => {
     myFormData.append("imageUrl", image);
 
     try {
-      const { data } = await axios.post(
+      const {data} = await axios.post(
         `${import.meta.env.VITE_API_URL}/forum/create-topic`,
         myFormData
       );
+      //console.log(response)
       console.log("topic created", data);
       setTopics([data, ...topics]); 
       nav("/forum");
