@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { ForumContext } from "../contexts/ForumContext";
 import { PopUpCreateForumForm } from "../components/PopUpCreateForumForm"; 
 import "./ForumPage.css";
-import "../components/LandingTemplate.css"
+import "./LandingPage.css"
 
 
 const ForumPage = () => {

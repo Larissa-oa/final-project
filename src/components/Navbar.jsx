@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import { Leaf, Sun, Sprout, Trees } from "lucide-react";
-import "./LandingTemplate.css";
+import "../pages/LandingPage.css";
 import "./Navbar.css"
 
 const Navbar = () => {

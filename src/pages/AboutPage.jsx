@@ -1,6 +1,7 @@
 import React from 'react'
 import { Send } from "lucide-react";
 import "./AboutPage.css"
+import "./LandingPage.css"
 
 const AboutPage = () => {
   return (

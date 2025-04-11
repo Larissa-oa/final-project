@@ -1,5 +1,5 @@
 import React from 'react'
-import "../components/LandingTemplate.css"
+import "./LandingPage.css"
 import { useState, useEffect } from "react";
 import { Sun, Sprout } from "lucide-react";
 
