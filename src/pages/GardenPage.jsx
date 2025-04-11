@@ -1,6 +1,6 @@
 import React from 'react'
 import { Sprout } from "lucide-react"
-import "../components/LandingTemplate.css"
+import "./LandingPage.css"
 import "./GardenPage.css"
 
 const GardenPage = () => {

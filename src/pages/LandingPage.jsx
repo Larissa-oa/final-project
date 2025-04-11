@@ -6,7 +6,6 @@ import { Sun, Sprout } from "lucide-react";
 const LandingPage = () => {
   const [floatingElements, setFloatingElements] = useState([]);
 
-  // Create floating nature elements
   useEffect(() => {
     const interval = setInterval(() => {
       if (floatingElements.length < 12) {

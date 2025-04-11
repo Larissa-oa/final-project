@@ -166,3 +166,6 @@
     align-items: center;
     justify-content: center;
   }
+  .nav-button {
+    text-decoration: none;
+  }

@@ -9,7 +9,8 @@ const AuthContextWrapper = ({children}) =>{
     const [isLoading, setIsLoading] = useState(true);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const nav = useNavigate();
-     //grab the token and verify it
+
+
   const authenticateUser = async () => {
     const tokenFromLocalStorage = localStorage.getItem("authToken");
     if (!tokenFromLocalStorage) {
@@ -40,12 +41,12 @@ const AuthContextWrapper = ({children}) =>{
     }
     }
 
-  //With the useEffect we verify the token in the LocalStorage anytime the page reloads
+ 
   useEffect(() => {
     authenticateUser();
   }, []);
 
-    //Logout the user by deleting the token from the LocalStorage
+
     async function handleLogout() {
         localStorage.removeItem("authToken");
         await authenticateUser();

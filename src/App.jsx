@@ -13,6 +13,7 @@ import CategoryPage from "./pages/CategoryPage"
 import Navbar from "./components/Navbar";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Footer from './components/Footer';
+import ForumDetailPage from './pages/ForumDetailPage';
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
           />
           <Route path="/about" element={<AboutPage/>} />
           <Route path="/forum" element={<ForumPage />} />
+          <Route path="/forum/:id" element={<ForumDetailPage/>}/>
           <Route path="/garden" element={<GardenPage />} />
           <Route path="/category/:categoryId" element={<CategoryPage/>} />
           <Route path="/" element={<LandingPage/>} />
