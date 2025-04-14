@@ -14,7 +14,7 @@ const ForumContextWrapper = ({ children }) => {
     axios
       .get(`${import.meta.env.VITE_API_URL}/forum/all-topics`)
       .then((res) => {
-        console.log("All topics:", res);
+        // console.log("All  topics:", res);
         setTopics(res.data.allTopics);
       })
       .catch((err) => {

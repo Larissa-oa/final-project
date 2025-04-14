@@ -9,39 +9,40 @@ import LandingPage from "./pages/LandingPage";
 import ForumPage from "./pages/ForumPage";
 import NotFoundPage  from "./pages/NotFoundPage";
 import GardenPage from "./pages/GardenPage";
-import CategoryPage from "./pages/CategoryPage"
 import Navbar from "./components/Navbar";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Footer from './components/Footer';
+import TypePage from './pages/TypePage';
 import ForumDetailPage from './pages/ForumDetailPage';
+import './App.css'
+
 
 function App() {
 
   return (
-    <>
-  <Navbar />
+  <>
+    <Navbar />
         <Routes>
-          <Route path="/home" element={<HomePage/>} />
-          <Route path="/signup" element={<SignupPage/>} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route
-            path="/profile"
-            element={
-              <ProtectedRoute>
-                <ProfilePage />
-              </ProtectedRoute>
-            }
-          />
-          <Route path="/about" element={<AboutPage/>} />
-          <Route path="/forum" element={<ForumPage />} />
-          <Route path="/forum/:id" element={<ForumDetailPage/>}/>
-          <Route path="/garden" element={<GardenPage />} />
-          <Route path="/category/:categoryId" element={<CategoryPage/>} />
-          <Route path="/" element={<LandingPage/>} />
-          <Route path="/notfound" element={<NotFoundPage/>} />
-          </Routes>
-          <Footer />
-      </>
+            <Route path="/home" element={<HomePage/>} />
+            <Route path="/signup" element={<SignupPage/>} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route
+              path="/profile"
+              element={
+                <ProtectedRoute>
+                  <ProfilePage />
+                </ProtectedRoute>
+              }
+            />
+            <Route path="/about" element={<AboutPage/>} />
+            <Route path="/forum" element={<ForumPage />} />
+            <Route path="/garden" element={<GardenPage />} />
+            <Route path="/garden/:typeTitle" element={<TypePage/>} />
+            <Route path="/" element={<LandingPage/>} />
+            <Route path="/notfound" element={<NotFoundPage/>} />
+        </Routes>
+    <Footer />
+ </>
   )
 }
 
