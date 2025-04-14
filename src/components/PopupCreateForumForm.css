@@ -1,0 +1,142 @@
+
+.forum-body {
+    width: 55vw;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 80px; 
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000; 
+  }
+  
+
+  .btn-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .btn-close:hover {
+    color: #ff4d4d;
+  }
+  
+
+  .title-form-create-forum {
+    font-size: 24px;
+    color:#0a4d33e0;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Form */
+  .form-create-t {
+    display: flex;
+    flex-direction: column;
+    align-items: justify;
+    gap: 15px;
+  }
+  
+
+  .label-form {
+    font-size: 16px;
+    color: #444;
+  }
+  
+
+  .input-form {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+  }
+
+  .align-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -15px;
+  }
+  .submite-create-forum-btn {
+    width: 40%;
+    padding: 18px;
+    font-size: 16px;
+    border: 1px solid white; 
+    background: linear-gradient(45deg,  #fbbf24, #fde68a);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    color: #0a4d33e0;
+    cursor: pointer;
+    font-weight: bolder;
+  }
+  
+  .submite-create-forum-btn:hover {
+    border: 1px solid white; 
+    background: linear-gradient(45deg,  #f8b611, #f6db70);
+  }
+  @media (max-width: 768px) {
+    .forum-body {
+      width: 90vw;
+      top: 65px;
+      padding: 15px;
+    }
+  
+    .align-btn {
+      width: 90vw;
+    }
+  
+    .submite-create-forum-btn {
+      width: 60%;
+      font-size: 1rem;
+      padding: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .forum-body {
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      border-radius: 0;
+      transform: none;
+      padding: 20px;
+      overflow-y: auto;
+    }
+  
+    .btn-close {
+      top: 15px;
+      right: 15px;
+      font-size: 2rem;
+    }
+  
+    .title-form-create-forum {
+      font-size: 1.2rem;
+    }
+  
+    .input-form {
+      font-size: 14px;
+    }
+  
+    .submite-create-forum-btn {
+      font-size: 0.9rem;
+      padding: 12px;
+    }
+  }
+  
+
+

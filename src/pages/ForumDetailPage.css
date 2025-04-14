@@ -1,0 +1,49 @@
+html, body {
+    margin: 0; 
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+.forum-detail-page-img  {
+    max-height: 300px;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    object-position: center center;
+    opacity: 0.7;
+}
+
+.forum-detail-content {
+    background-color:#0a4d33e0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 15px 25px;
+    margin-top: -5px;
+}
+
+.author-info-detail-page {
+    display: flex;
+    align-items: center; 
+  }
+
+  .author-avatar {
+    margin-top: -500px;
+    z-index: 10;
+    margin-right: -60px;
+    margin-left: 82%;
+    background-color: trasparent;
+    backdrop-filter: blur(10px);
+  }
+
+  .author-initials-detail-page {
+    margin-top: -500px;
+    border-radius: 8px;
+    width: 140px;
+    height: 60px;
+    font-weight: 500;
+    background-color: trasparent;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 5px;
+  }

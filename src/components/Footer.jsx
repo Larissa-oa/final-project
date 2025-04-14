@@ -5,7 +5,6 @@ import "../pages/LandingPage.css"
 const Footer = () => {
   return (
     <div>
-      {/* Footer */}
       <footer className="site-footer">
         <div className="footer-copyright">© 2025 Solaris Garden</div>
         <div className="footer-links">

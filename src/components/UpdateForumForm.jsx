@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import "./UpdateForumForm.css" 
+import bin from "../assets/images/delete.png"
+import post from "../assets/images/post.png"
+import { format } from 'date-fns'
 
 const UpdateForumForm = () => {
   const { id } = useParams();
@@ -46,41 +50,75 @@ const UpdateForumForm = () => {
       });
   };
 
+  const formatTimestamp = (timestamp) => {
+    return format(new Date(timestamp), 'MMMM dd, yyyy');
+  };
+
+
+  // does it have to be on the ForumContext? 
+  const handleDeleteComment = (replyId) => {
+    const token = localStorage.getItem("authToken");
+    axios
+      .delete(`${import.meta.env.VITE_API_URL}/forum/${id}/delete-reply/${replyId}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((res) => {
+        console.log("Reply deleted:", res);
+        setReply((prevReplies) => prevReplies.filter((comment) => comment._id !== replyId));
+      })
+      .catch((err) => {
+        console.log("Error deleting reply:", err);
+      });
+  };
+
   return (
-    <div>
-      <h3>Comments</h3>
+    <div className="comment-container">
+      <div className="comment-card-forum-form">
       {reply.length > 0 ? (
         <ul>
           {reply.map((c, i) => (
             <li key={i}>
-              <strong>{c.owner?.username || "Anonymous"}</strong>: {c.text}
+              <div className="user-info">
+             <img
+                  src={c.owner?.profileImage || "/default-image.jpg"}
+                  alt={c.owner?.username || "Anonymous"}
+                  style={{
+                    width: "65px",
+                    height: "60px",
+                    borderRadius: "50%",
+                  }}
+                  className="author-image-comment"
+                />
+                
+              <span className="author-name">{c.owner?.username || "Anonymous"}</span> 
+              </div>
+              <p className="comment-text">{c.text}</p>
+              <p className="forum-timestamp">{formatTimestamp(c.createdAt)}</p>
+              <button onClick={() => handleDeleteComment(c._id)} className="delete-comment-btn"><img src={bin} /></button>
             </li>
           ))}
         </ul>
       ) : (
         <p>No comments yet.</p>
       )}
+      </div>
 
       <form onSubmit={handleAddComment}>
-        <label>
-          Your name:
+        <div className="add-comment-container">
+        <label className="label-add-comment">
           <input
-            type="text"
-            value={ownerName}
-            onChange={(e) => setOwnerName(e.target.value)}
-            placeholder="Enter your name"
-          />
-        </label>
-        <label>
-          Add your comment here:
-          <textarea
             rows="4"
+            className="text-area-comment"
+            placeholder='Add your comment here'
             value={replyTopic}
             onChange={(e) => setReplyTopic(e.target.value)}
             required
+
           />
         </label>
-        <button type="submit">Post</button>
+        <button type="submit" className="post-btn"><img src={post} /></button>
+        </div>
+        
       </form>
     </div>
   );

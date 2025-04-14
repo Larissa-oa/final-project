@@ -1,0 +1,135 @@
+
+/*comment card*/
+.comment-container { 
+    width: 100%;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.comment-card-forum-form {
+    background-color: rgb(247, 245, 245);
+    padding: 20px;
+    width: 97%;
+    border-radius: 5px;
+    margin-top: 30px;
+    margin-bottom: 5px;
+    display: flex;
+    font-size: 1rem;
+    color: black;
+    align-items: center;
+}
+
+.comment-card-forum-form ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100%;
+  }
+  
+  .comment-card-forum-form li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    width: 100%;
+  }
+  
+  .user-info {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+  }
+
+  .author-image-comment {
+    margin-left: -10px;
+  }
+
+  .author-name {
+    margin-left: -5px;
+    margin-right: 40px;
+    font-weight: 500;
+  }
+
+  .delete-comment-btn {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: rgb(247, 245, 245);
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.delete-comment-btn img{
+    height: 25px;
+    width: 25px;
+}
+
+/* form */
+.add-comment-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.label-add-comment {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+}
+
+.text-area-comment {
+    min-width: 80%;
+    margin: 20px;
+    border-radius: 8px;
+    min-height: 80px;
+    max-height: 180px;
+}
+
+.text-area-comment::placeholder {
+    font-size: 1.1rem;
+    padding: 5px;
+}
+
+.post-btn {
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: none;
+    margin-left: -220px;
+}
+
+.post-btn img {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    z-index: 100;
+}
+
+.forum-timestamp {
+  color: rgb(196, 196, 196);
+  font-size: 09.rem;
+}
+
+@media (max-width: 1180px) {
+  .post-btn {
+    margin-left: -100px;
+  }
+}
+
+@media (max-width: 600px) {
+  .post-btn {
+    margin-left: -60px;
+  }
+
+  .text-area-comment {
+    width: 50vw;
+    margin: 10px;
+  }
+
+}
+
