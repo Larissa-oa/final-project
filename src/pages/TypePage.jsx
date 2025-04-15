@@ -1,17 +1,19 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { TypeContext } from '../contexts/TypeContext';
-import { useParams } from 'react-router-dom';
+import {  useParams } from 'react-router-dom';
 import backtop from "../assets/back-top.png";
-import "./TypePage.css"
+import "./TypePage.css";
+import { Link } from "react-router-dom";
+
 
 
 const TypePage = () => {
   const { typeTitle } = useParams();
   const { plants } = useContext(TypeContext);
+
   const [filteredPlants, setFilteredPlants] = useState([]);
   const [filteredMushrooms, setFilteredMushrooms] = useState([]);
   const [mushrooms, setMushrooms] = useState([]);
-
   useEffect(() => {
     const getAllMushrooms = async () => {
       try {
@@ -45,61 +47,64 @@ const TypePage = () => {
   }, [typeTitle, plants, mushrooms]);
 
   const isMushroomType = typeTitle.toLowerCase() === 'mushrooms';
-
   return (
-    <div>
-      {isMushroomType ? (
-        filteredMushrooms.length > 0 ? (
-          filteredMushrooms.map((mushroom) => (
-            <div className="section skills-section" key={mushroom._id}>
-                <h2 className="section-title">{mushroom.name}</h2>
-                <div className="skills-grid">
-                    <div className="skill-card">
-                      <div className="skill-icon-container">
-                        <div className="skill-icon" />
-                           <img src={mushroom.image} alt={mushroom.name} />
-                        </div>
-                          <h3 className="skill-title"> 
-                            <p>{mushroom.scientific_name}</p>
-                          </h3> 
-                        </div>
-              </div>
-            </div>
-      ))
-        
-        ) : (
-          <p>No mushrooms found for type "{typeTitle}".</p>
-        )
-      ) : filteredPlants.length > 0 ? (
-        filteredPlants.map((plant) => (
-          <div className="section skills-section" key={plant._id}>
-          <div className="section-overlay"></div>
-            <h2 className="section-title">{plant.name}</h2>
-            <div className="skills-grid">
-             <div className='all-types' >
-                <div className="skill-card">
-                  <div className="skill-icon-container">
-                    <div className="skill-icon" />
-                       <img src={plant.image} alt={plant.name} />
-                    </div>
-                      <h3 className="skill-title">
-                        {plant.scientific_name}
-                      </h3> 
-                    </div>
+    <div className="type-wrapper">
+      <div className="type-grid">
+        {isMushroomType ? (
+          filteredMushrooms.length > 0 ? (
+            filteredMushrooms.map((mushroom) => (
+              <div className="type-info" key={mushroom._id}>
+                <h3>{mushroom.name}</h3>
+                <Link to={`/type-details/mushroom/${mushroom._id}`}>
+                  <div className="image-container">
+                    <img
+                      src={mushroom.image}
+                      alt={mushroom.name}
+                    />
                   </div>
+                  <h4>{mushroom.scientific_name}</h4>
+                </Link>
+                <div className="button-container">
+                <Link to={`/type-details/mushroom/${mushroom._id}`}>
+                <button>Details</button>
+                </Link>
+                <button>Favorites</button>
+                </div>
               </div>
-            </div>
-        ))
-      ) : (
-        <p>No items found for type "{typeTitle}".</p>
-      )}
-      {/* Back to Top Button */}
-            <button
-              className="back-to-top-btn"
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            >
-              <img src={backtop} alt="Back to top button" />
-            </button>
+              
+            ))
+          ) : (
+            <p>No mushrooms found for type "{typeTitle}".</p>
+          )
+        ) : filteredPlants.length > 0 ? (
+          filteredPlants.map((plant) => (
+            <div className="type-info" key={plant._id}>
+            <h3>{plant.name}</h3>
+            <Link to={`/type-details/mushroom/${plant._id}`}>
+              <div className="image-container">
+                <img
+                  src={plant.image}
+                  alt={plant.name}
+                />
+              </div>
+              <h4>{plant.scientific_name}</h4>
+            </Link>
+          </div>
+          ))
+        ) : (
+          <p>No items found for type "{typeTitle}".</p>
+        )}    
+      </div>
+  <button
+  className="back-to-top-btn"
+  onClick={() => {
+    console.log("Back to top clicked");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }}
+>
+  <img src={backtop} alt="Back to top button" />
+</button>
+
     </div>
   );
 };
