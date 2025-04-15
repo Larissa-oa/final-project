@@ -41,7 +41,7 @@
               <Route path="/garden/:typeTitle" element={<TypePage/>} />
               <Route path="/forum/:id" element={<ForumDetailPage />} />
               <Route path="/type-details/:plantsType/:itemId" element={<PlantCard/>} />
-              <Route path="/notfound" element={<NotFoundPage/>} />
+              <Route path="/*" element={<NotFoundPage/>} />
           </Routes>
       <Footer />
   </>
