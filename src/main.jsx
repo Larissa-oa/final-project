@@ -6,6 +6,7 @@ import { AuthContextWrapper } from './contexts/AuthContext.jsx'
 import { ForumContextWrapper } from './contexts/ForumContext.jsx'
 import { TypeContextWrapper } from './contexts/TypeContext.jsx'
 import { MessageProvider } from './contexts/MessageContext.jsx'
+import { FavoritesProvider } from './contexts/FavoriteContext.jsx'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -14,7 +15,9 @@ createRoot(document.getElementById('root')).render(
       <AuthContextWrapper>
         <TypeContextWrapper>
           <MessageProvider>
+            <FavoritesProvider>
           <App />
+          </FavoritesProvider>
           </MessageProvider>
         </TypeContextWrapper>
       </AuthContextWrapper>

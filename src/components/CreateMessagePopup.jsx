@@ -1,20 +1,23 @@
 import React, { useState, useContext } from 'react';
-import { useMessages } from '../contexts/MessageContext';
+import {MessageContext, useMessages } from '../contexts/MessageContext';
 import "./CreateMessagePopup.css"
 import post from "../assets/images/post.png"
+import { AuthContext } from '../contexts/AuthContext';
 
-const CreateMessagePopup = ({ onClose, recipientId, recipientUsername, recipientProfileImage }) => {
+const CreateMessagePopup = ({ onClose, recipientUsername, recipientId, recipientProfileImage}) => {
   const [message, setMessage] = useState('');
   const { sendMessage } = useMessages();
-
+  const {currentUser} = useContext(AuthContext)
+  const senderId= currentUser._id
   const handleMessageChange = (e) => {
     setMessage(e.target.value);
   };
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (message.trim() === '') return;
-
+  
     try {
       await sendMessage(recipientId, message);
       setMessage('');
@@ -23,6 +26,7 @@ const CreateMessagePopup = ({ onClose, recipientId, recipientUsername, recipient
       console.log('Error sending message:', error);
     }
   };
+  
 
 
   return (

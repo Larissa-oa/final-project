@@ -90,7 +90,11 @@ const TypePage = () => {
               <h4>{plant.scientific_name}</h4>
             </Link>
             <div className="button-container">
+<<<<<<< HEAD
                 <Link to={`/type-details/plants/${plant._id}`}>
+=======
+                <Link to={`/type-details/plantds/${plant._id}`}>
+>>>>>>> c69a2a84a4cbe5098d12fac84d8716274f51a1c3
                 <button>Details</button>
                 </Link>
                 <button>Favorites</button>

@@ -8,7 +8,6 @@
 
   .user-info {
     display: flex;
-    flex-direction: row;
     align-items: center;
     gap: 1rem;
     background-color: #0a4d33dd;
@@ -17,6 +16,8 @@
     border: 1px solid #c3e6cb;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     max-width: 300px;
+    flex-direction: column;
+    margin-right: 20px;
   }
   
   .user-basic-info{
@@ -60,11 +61,41 @@
     height: 17px;
   }
 
+  /*dm*/
+
+  .mail-message-container {
+    width: 100%;
+    background-color: #e7f8ed;
+    padding: 10px;
+    padding-left: 30px;
+    border-radius:10px;
+    margin-top: 5px;
+  }
+
+  .mail-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .message-item{
+    background-color: white;
+    margin-top: 5px;
+    width: 93%;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    list-style-type: none;
+  }
 
   #user-mail-container {
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: flex-end;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 100px;
   }
 
@@ -74,10 +105,21 @@
     border-radius: 35px;
   }
 
+  .delete-mail-btn {
+    background-color: transparent;
+    border: none;
+    margin-left: 93%;
+  }
+
+  .mail-back-to {
+    cursor: pointer
+  }
+  
   /*user fav ccoontent*/
 
   .user-fav-content {
     color: #052e1f;
+    border-radius: 10px;
     width: 50%;
     margin-left: -30px;
     display: flex;

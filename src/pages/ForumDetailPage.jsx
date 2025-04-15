@@ -3,8 +3,8 @@ import { useParams } from "react-router-dom";
 import { ForumContext } from "../contexts/ForumContext";
 import UpdateForumForm from "../components/UpdateForumForm";
 import CreateMessagePopup from "../components/CreateMessagePopup";
-
 import "./ForumDetailPage.css";
+import { AuthContext } from "../contexts/AuthContext";
 
 const ForumDetailPage = () => {
   const { id } = useParams();
@@ -12,6 +12,7 @@ const ForumDetailPage = () => {
   const [topic, setTopic] = useState(null);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [selectedUser, setSelectedUser] = useState(null);
+  const {currentUser} = useContext(AuthContext)
 
   useEffect(() => {
     const selectedTopic = topics.find((top) => top._id === id);
@@ -37,7 +38,7 @@ const ForumDetailPage = () => {
       <div className="forum-details-info">
         <img src={topic.image} alt="topic-related-image" className="forum-detail-page-img" />
         {topic.author ? (
-          <span className="author-info-detail-page" onClick={() => openPopup(topic.author)} style={{ cursor: "pointer" }}>
+          <span id="author-detail-content" onClick={() => openPopup(topic.author)} style={{ cursor: "pointer" }}>
             {topic.author.profileImage ? (
               <img
                 src={topic.author.profileImage}
@@ -47,7 +48,7 @@ const ForumDetailPage = () => {
                   height: "40px",
                   borderRadius: "50%",
                 }}
-                className="author-avatar"
+                className="author-avatar-forum-page"
               />
               
             ) : (
@@ -59,7 +60,7 @@ const ForumDetailPage = () => {
           "Anonymous"
         )}
       </div>
-      <div className="forum-detail-content">
+      <div id="forum-detail-content">
         <h1>{topic.title}</h1>
         <p>{topic.description}</p>
         <p>{topic.location.join(", ")}</p>
@@ -69,9 +70,10 @@ const ForumDetailPage = () => {
         <CreateMessagePopup
           isOpen={isPopupOpen}
           onClose={closePopup}
-          recipientId={selectedUser.id}
+          recipientId={selectedUser._id}
           recipientUsername={selectedUser.username}
           recipientProfileImage={selectedUser.profileImage}
+         
         />
       )}
     </div>

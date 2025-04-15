@@ -27,9 +27,13 @@ const AuthContextWrapper = ({children}) =>{
                 },
               }
             );
-        
+            const userWithToken = {
+              ...responseFromVerifyRoute.data.payload,
+              token: tokenFromLocalStorage,
+            };
+
         console.log("authenticate user function", responseFromVerifyRoute)
-        setCurrentUser(responseFromVerifyRoute.data.payload);
+        setCurrentUser(userWithToken);
         setIsLoading(false);
         setIsLoggedIn(true)
          } catch (error) {

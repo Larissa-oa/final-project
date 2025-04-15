@@ -86,3 +86,7 @@
   height: 20px;
   object-fit: contain;
 }
+
+.garden-section-title {
+  text-align: center;
+}
