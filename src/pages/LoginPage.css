@@ -1,0 +1,135 @@
+/* LoginPage.css */
+
+/* Global styles for full-page center and dark background */
+.signin-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    padding: 5px;
+  }
+  
+  /* Title */
+  .signin-page h3 {
+    margin: 0px 0 40px 0;
+    font-size: 28px;
+    color: #f0f0f0;
+  }
+  
+  /* Login form styling */
+  form {
+    background: rgba(255, 251, 251, 0.115);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.085);
+    padding: 30px 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    animation: fadeIn 0.5s ease-in-out;
+    box-shadow: 0 0 9px #ccc;
+  }
+  
+  /* Input labels */
+  form label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 500;
+    color: #ccc;
+  }
+  
+  /* Input fields */
+  form input[type="email"],
+  form input[type="password"] {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #555;
+    background-color: #7e7d7d46;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-top: 6px;
+    transition: border-color 0.3s;
+  }
+  
+  form input:focus {
+    border-color: #5d5d5d;
+    outline: none;
+  }
+  
+  /* Submit button */
+  form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #7e7d7d46;
+
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+  }
+  
+  form button:hover {
+    background-color: #3f3f3f;
+  }
+  
+  /* Error message */
+  .error {
+    color: #ff6b6b;
+    margin-top: 15px;
+    font-weight: 500;
+  }
+  
+  /* Link below the form */
+  .signup-link {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #ccc;
+  }
+  
+  .signup-link:hover {
+    text-decoration: underline;
+    color: #a0a0a0;
+  }
+  
+  /* Sign up button inside link */
+  .signup-link button {
+    width: 100%;
+    padding: 12px;
+    background-color: transparent;
+    color: white;
+    border: 1px solid #666;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, border-color 0.3s;
+  }
+  
+  .signup-link button:hover {
+    background-color: #444;
+    border-color: #aaa;
+  }
+  
+  /* Fade-in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

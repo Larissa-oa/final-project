@@ -1,7 +1,7 @@
-.skills-grid {
+.garden-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
-  gap: 1.5rem;
+  gap: 1.2rem;
   padding: 2rem 2rem;
 }
 
@@ -11,7 +11,7 @@
   width: 100%;
   aspect-ratio: 1 / 1; /* Makes it a perfect square */
   overflow: hidden;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
 }

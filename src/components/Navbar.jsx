@@ -11,6 +11,7 @@ const Navbar = () => {
   const sections = [
     { id: "home", label: "Homepage", icon: <Trees className="icon" />, link: "/" },
     { id: "about", label: "Forum", icon: <Sprout className="icon" />, link: "/forum" },
+    { id: "profile", label: "Profile", icon: <Leaf className="icon" />, link: "/profile" },
     { id: "skills", label: "Our Garden", icon: <Sun className="icon" />, link: "/garden" },
     { id: "contact", label: "About us", icon: <Leaf className="icon" />, link: "/about" },
   ];
@@ -56,7 +57,7 @@ const Navbar = () => {
           <Sun className="icon" />
           Our Garden
         </NavLink>
-
+        
         <NavLink
           to="/about"
           className={({ isActive }) =>
@@ -65,6 +66,15 @@ const Navbar = () => {
         >
           <Leaf className="icon" />
           About us
+        </NavLink>
+        <NavLink
+          to="/profile"
+          className={({ isActive }) =>
+            `nav-button ${isActive ? "nav-button-active" : ""}`
+          }
+        >
+          <Leaf className="icon" />
+          Profile
         </NavLink>
       </nav>
 

@@ -10,10 +10,8 @@ const {types} = useContext(TypeContext)
 
   return (
     <div>
-      <div className="section skills-section">
-        <div className="section-overlay"></div>
           <h2 className="section-title">Garden</h2>
-          <div className="skills-grid">
+          <div className="garden-grid">
             {types && types.map((oneType) =>{
             return(
               <div className='category-info' key={oneType._id}>
@@ -25,7 +23,6 @@ const {types} = useContext(TypeContext)
             )}
           )}
           </div>
-        </div>
       </div>  
   )
 }

@@ -54,10 +54,7 @@ const ForumPage = () => {
        </section>
     <div className="forum-section">
       <div className="forum-text">
-      <div className="forum-page">
-
-
-        
+      <div className="forum-page">       
   
       {isModalOpen && (
         <div className="modal-overlay">

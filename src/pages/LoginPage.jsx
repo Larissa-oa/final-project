@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react'
 import {Link, useNavigate } from "react-router-dom";
 import {AuthContext} from "../contexts/AuthContext"
 import axios from 'axios';
-
+import "./LoginPage.css"
 
 const LoginPage = () => {
   const [email, setEmail] = useState("")
@@ -32,8 +32,8 @@ function handleLogin(event) {
 }
 
   return (
-    <div className ="signup-page">
-      <h3>Login</h3>
+    <div className ="signin-page">
+      <h3>Access Your Account</h3>
       <form onSubmit={handleLogin}>
           <label>
               Email:
@@ -48,8 +48,11 @@ function handleLogin(event) {
           <button type="submit">Login</button>
       </form>
       {errorMessage ? <p className="error">{errorMessage}</p> : null}
+      
       <p>
-      <Link to="/signup">Sign Up</Link>
+      <Link className="signup-link" to="/signup">
+       <button>Sign Up</button>
+      </Link>
       </p>
     </div>
   )
