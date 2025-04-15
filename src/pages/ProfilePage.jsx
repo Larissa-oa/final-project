@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Chatbot } from "../components/Chatbot"
 import { AuthContext } from '../contexts/AuthContext'
 import "./ProfilePage.css"
