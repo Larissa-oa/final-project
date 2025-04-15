@@ -1,9 +1,9 @@
+
   import { useState } from 'react'
   import { Route, Routes } from "react-router-dom";
   import SignupPage from "./pages/SignupPage";
   import LoginPage from "./pages/LoginPage";
   import ProfilePage from "./pages/ProfilePage";
-  import HomePage from "./pages/HomePage";
   import AboutPage from "./pages/AboutPage";
   import LandingPage from "./pages/LandingPage";
   import ForumPage from "./pages/ForumPage";
@@ -24,7 +24,7 @@
     <>
       <Navbar />
           <Routes>
-              <Route path="/home" element={<HomePage/>} />
+              <Route path="/" element={<LandingPage/>} />
               <Route path="/signup" element={<SignupPage/>} />
               <Route path="/login" element={<LoginPage />} />
               <Route
@@ -35,7 +35,6 @@
                   </ProtectedRoute>
                 }
               />
-              <Route path="/" element={<HomePage/>} />
               <Route path="/about" element={<AboutPage/>} />
               <Route path="/forum" element={<ForumPage />} />
               <Route path="/garden" element={<GardenPage />} />

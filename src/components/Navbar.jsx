@@ -9,7 +9,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const sections = [
-    { id: "home", label: "HomePage", icon: <Trees className="icon" />, link: "/home" },
+    { id: "home", label: "Homepage", icon: <Trees className="icon" />, link: "/" },
     { id: "about", label: "Forum", icon: <Sprout className="icon" />, link: "/forum" },
     { id: "skills", label: "Our Garden", icon: <Sun className="icon" />, link: "/garden" },
     { id: "contact", label: "About us", icon: <Leaf className="icon" />, link: "/about" },
@@ -28,7 +28,7 @@ const Navbar = () => {
 
       <nav className="desktop-nav">
         <NavLink
-          to="/home"
+          to="/"
           className={({ isActive }) =>
             `nav-button ${isActive ? "nav-button-active" : ""}`
           }

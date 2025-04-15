@@ -291,4 +291,104 @@
     color: var(--color-amber-200);
   }
   
-  
+  /* Full viewport sections */
+.section {
+  position: relative;
+  width: 100vw;
+  height: 100vw;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* Parallax Section Styles */
+.garden-section {
+  background: linear-gradient(to top, #f0fdf4, #ccfbf1);
+  color: #065f46;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  opacity: 0;
+  transform: translateY(100vw);
+  transition: all 1s ease-out;
+  z-index: 10;
+}
+
+.parallax-reveal {
+  animation: slideUpFadeIn 1.2s ease-out forwards;
+}
+
+@keyframes slideUpFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.1));
+  pointer-events: none;
+  z-index: 1;
+}
+
+.section-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Floating elements */
+.floating-wrapper {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.floating-element {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.4;
+  animation: floatUp 30s linear infinite;
+  transition: all 1s ease-in-out;
+}
+
+.leaf-element {
+  background-color: rgba(52, 211, 153, 0.4);
+}
+
+.light-element {
+  background-color: rgba(251, 191, 36, 0.3);
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(-10vh) scale(1.2);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-20vh) scale(1);
+    opacity: 0.4;
+  }
+}
+
+
+.floating-element.show-parallax {
+  opacity: 0.5;
+  transform: scale(1);
+}
+
+
+.parallax-floating .floating-element {
+  opacity: 0.5;
+  transform: scale(1);
+}

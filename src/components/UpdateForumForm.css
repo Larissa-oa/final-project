@@ -51,6 +51,11 @@
     font-weight: 500;
   }
 
+  .mail-to-img {
+    position: relative;
+    margin-bottom: -3px;
+  }
+
   .delete-comment-btn {
     height: 30px;
     width: 30px;

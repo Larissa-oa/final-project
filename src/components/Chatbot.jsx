@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import './Chatbot.css'; 
+import plantbot from "../assets/images/plantbot.png"
+import textbox from "../assets/images/chatbot-intro.png"
+import post from "../assets/images/post.png"
 
 const Chatbot = () => {
   const [messages, setMessages] = useState([]);
@@ -44,29 +47,36 @@ const Chatbot = () => {
   };
 
   return (
-    <div className="chatbot-container">
+    <div className="chatbot-box">
       <div className="chatbot-header">
-        <h3>🌿 PlantBot</h3>
+        <img src={plantbot} alt="PlantBot" />
+        <span className="chatbot-intro">
+        <h2>Hello, I'm Compost Malone</h2>
+        <p> your plant assistant</p>
+        </span>
       </div>
 
-      <div className="chatbox">
-        {messages.map((message, index) => (
-          <div key={index} className={`message ${message.sender}`}>
-            <p>{message.text}</p>
+      <div className="chatbot-messages">
+        {messages.length === 0 && <p className="placeholder">Got a plant questions?🌿</p>}
+        {messages.map((msg, idx) => (
+          <div key={idx} className={`bubble ${msg.sender}`}>
+            {msg.text}
           </div>
         ))}
-        {isLoading && <div className="message bot"><p>Typing...</p></div>}
+        {isLoading && <div className="bubble bot">Typing...</div>}
       </div>
 
-      <div className="chatbot-footer">
+      <div className="chatbot-input">
         <input
           type="text"
-          placeholder="Ask me about your plants..."
           value={userMessage}
           onChange={(e) => setUserMessage(e.target.value)}
           onKeyPress={handleKeyPress}
+          placeholder="Ask PlantBot..."
         />
-        <button onClick={sendMessage}>Send</button>
+        <button onClick={sendMessage} disabled={isLoading || !userMessage.trim()}>
+          <img src={post} alt="Send" />
+        </button>
       </div>
     </div>
   );

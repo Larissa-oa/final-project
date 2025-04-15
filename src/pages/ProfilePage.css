@@ -1,0 +1,103 @@
+.profile-page {
+    display: flex;
+    gap: 2rem;
+    padding: 1rem;
+    background-color: white;
+  }
+  
+
+  .user-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    background-color: #0a4d33dd;
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid #c3e6cb;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    max-width: 300px;
+  }
+  
+  .user-basic-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: -25px;
+  }
+
+  .user-avatar-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+
+  .user-basic-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.25rem;
+    color: white;
+  }
+  
+
+  .username {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  .email {
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  
+  .mail-to-img {
+    width: 17px;
+    height: 17px;
+  }
+
+
+  #user-mail-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 100px;
+  }
+
+  .private-messages {
+    font-size: 1rem;
+    padding: 12px 15px;
+    border-radius: 35px;
+  }
+
+  /*user fav ccoontent*/
+
+  .user-fav-content {
+    color: #052e1f;
+    width: 50%;
+    margin-left: -30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .personal-garden {
+    margin-bottom: 30px;
+  }
+
+  @media screen and (min-width: 868px) {
+    .user-info {
+        max-width: 370px;
+    }
+
+    .user-fav-content {
+        width: 70%;
+    }
+
+  }
+  
