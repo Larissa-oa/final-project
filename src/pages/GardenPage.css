@@ -1,4 +1,4 @@
-.skills-grid {
+.garden-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
   gap: 1.5rem;
@@ -85,4 +85,8 @@
   width: 20px;
   height: 20px;
   object-fit: contain;
+}
+
+.garden-section-title {
+  text-align: center;
 }

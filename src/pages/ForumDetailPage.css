@@ -13,19 +13,20 @@ html, body {
     opacity: 0.7;
 }
 
-.forum-detail-content {
+#forum-detail-content {
     background-color:#0a4d33e0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     padding: 15px 25px;
     margin-top: -5px;
 }
 
-.author-info-detail-page {
+#author-detail-content {
     display: flex;
     align-items: center; 
+    background-color: white;
   }
 
-  .author-avatar {
+  .author-avatar-forum-page {
     margin-top: -500px;
     z-index: 10;
     margin-right: -60px;

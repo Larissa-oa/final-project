@@ -5,14 +5,28 @@ import "./ProfilePage.css"
 import mail from "../assets/images/mail-white.png"
 import bin from "../assets/images/delete.png"
 import { useMessages } from '../contexts/MessageContext'
+import CreateMessagePopup from "../components/CreateMessagePopup"
 
-const ProfilePage = ({ onClose, recipientId, recipientUsername, recipientProfileImage }) => {
+const ProfilePage = () => {
   const [message, setMessage] = useState('')
-  const { messages, fetchMessages } = useMessages()
-  const {currentUser, isLoading} = useContext(AuthContext)
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+const [selectedUser, setSelectedUser] = useState(null);
+
+  const { messages, fetchMessages, deleteMessage } = useMessages()
+  const {currentUser} = useContext(AuthContext)
+
+  const openPopup = (sender) => {
+    setSelectedUser(sender);
+    setIsPopupOpen(true);
+  };
+  
+  const closePopup = () => {
+    setIsPopupOpen(false);
+    setSelectedUser(null);
+  };
+  
 
 useEffect( () => {
-
   fetchMessages()
 }, [])
 
@@ -35,8 +49,22 @@ useEffect( () => {
 
     <section className="user-fav-content">
     <div id="user-mail-container">
-      <h3>Check your messages</h3>
-<button className="deleteMessage"><img src={bin}  style= {{width:"17px", heigth: "17px"}}/></button>
+      <h2>Inbox</h2>
+      <span className="mail-message-container">
+      {messages.length > 0 ? ( 
+        <ul className="message-list">
+         {messages.map((currentMessage) => (
+          <li key={currentMessage._id} className="message-item">
+            <div className="message-container">
+            <span className="mail-back-to" onClick={() => openPopup(currentMessage.sender_id)}><img src={currentMessage.sender_id.profileImage} style={{width:"40px", height: "35px", borderRadius: "50%"}}/><strong>{currentMessage.sender_id.username}</strong>, says: </span>
+              <p>{currentMessage.message_body}</p>
+              <button className="delete-mail-btn" onClick={() => deleteMessage(currentMessage._id)}><img src={bin}  style= {{width:"17px", height: "17px"}}/></button>
+            </div>
+          </li>
+         ))}
+        </ul>
+      ) : ( <p>No messages yet</p>)}
+      </span>
     </div>
   <div className="fav-plant-card">
     <h2 className="personal-garden">Your Personal Garden</h2>
@@ -45,7 +73,15 @@ useEffect( () => {
     <h2>Your Active Forums </h2>
   </div>
   </section>
-
+  {selectedUser && (
+  <CreateMessagePopup
+    isOpen={isPopupOpen}
+    onClose={closePopup}
+    recipientId={selectedUser._id}
+    recipientUsername={selectedUser.username}
+    recipientProfileImage={selectedUser.profileImage}
+  />
+)}
  
   </div>
   

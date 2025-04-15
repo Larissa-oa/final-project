@@ -80,7 +80,7 @@ const TypePage = () => {
           filteredPlants.map((plant) => (
             <div className="type-info" key={plant._id}>
             <h3>{plant.name}</h3>
-            <Link to={`/type-details/mushroom/${plant._id}`}>
+            <Link to={`/type-details/plants/${plant._id}`}>
               <div className="image-container">
                 <img
                   src={plant.image}
@@ -89,6 +89,12 @@ const TypePage = () => {
               </div>
               <h4>{plant.scientific_name}</h4>
             </Link>
+            <div className="button-container">
+                <Link to={`/type-details/plantds/${plant._id}`}>
+                <button>Details</button>
+                </Link>
+                <button>Favorites</button>
+                </div>
           </div>
           ))
         ) : (

@@ -90,9 +90,9 @@ const UpdateForumForm = () => {
           <ul>
             {reply.map((c, i) => (
               <li key={i}>
-                <div className="user-info">
+                <div className="user-info-form-forum-detail">
                   <span
-                    className="author-info-detail-page"
+                    className="author-info-detail-page-form"
                     onClick={() => openPopup(c.owner)}
                     style={{ cursor: "pointer" }}
                   >
