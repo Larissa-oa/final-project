@@ -1,12 +1,21 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Chatbot } from "../components/Chatbot"
 import { AuthContext } from '../contexts/AuthContext'
 import "./ProfilePage.css"
 import mail from "../assets/images/mail-white.png"
 import bin from "../assets/images/delete.png"
+import { useMessages } from '../contexts/MessageContext'
 
-const ProfilePage = () => {
+const ProfilePage = ({ onClose, recipientId, recipientUsername, recipientProfileImage }) => {
+  const [message, setMessage] = useState('')
+  const { messages, fetchMessages } = useMessages()
   const {currentUser, isLoading} = useContext(AuthContext)
+
+useEffect( () => {
+
+  fetchMessages()
+}, [])
+
   return (
     <div className="profile-page">
     <div className="user-info">
@@ -26,7 +35,7 @@ const ProfilePage = () => {
 
     <section className="user-fav-content">
     <div id="user-mail-container">
-      <button className="private-messages"><p>Check your messages</p></button>
+      <h3>Check your messages</h3>
 <button className="deleteMessage"><img src={bin}  style= {{width:"17px", heigth: "17px"}}/></button>
     </div>
   <div className="fav-plant-card">
