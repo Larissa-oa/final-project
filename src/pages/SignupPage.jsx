@@ -19,15 +19,13 @@ const SignupPage = () => {
       data.append("upload_preset", "Ontrack");
       data.append("cloud_name", "dzne6fm6i");
   
-      // ⬇️ Await the image upload
       const uploadRes = await axios.post(
         "https://api.cloudinary.com/v1_1/dzne6fm6i/image/upload",
         data
       );
   
-      console.log("res: ", uploadRes.data); // should now contain the uploaded image data
+      console.log("res: ", uploadRes.data); 
   
-      // Use the uploaded image URL
       const newUser = {
         username,
         email,
@@ -35,7 +33,6 @@ const SignupPage = () => {
         profileImage: uploadRes.data.secure_url,
       };
   
-      // ⬇️ Create the user
       const signupRes = await axios.post(
         `${import.meta.env.VITE_API_URL}/auth/signup`,
         newUser
@@ -51,7 +48,7 @@ const SignupPage = () => {
   
 
   return (
-    <div className ="signin-page">
+    <div className ="signup-container-page">
       <h3>Sign Up with us</h3>
       <form className="signup-form" onSubmit={handleSignup}>
         <label>

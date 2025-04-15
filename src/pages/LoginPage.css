@@ -1,135 +1,170 @@
-/* LoginPage.css */
+.login-container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
 
-/* Global styles for full-page center and dark background */
+.video-section {
+  width: 35%;
+  height: 100%;
+  position: relative;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.4);
+}
+
 .signin-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: white;
-    padding: 5px;
-  }
-  
-  /* Title */
-  .signin-page h3 {
-    margin: 0px 0 40px 0;
-    font-size: 28px;
-    color: #f0f0f0;
-  }
-  
-  /* Login form styling */
-  form {
-    background: rgba(255, 251, 251, 0.115);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.085);
-    padding: 30px 40px;
-    border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 400px;
-    animation: fadeIn 0.5s ease-in-out;
-    box-shadow: 0 0 9px #ccc;
-  }
-  
-  /* Input labels */
-  form label {
-    display: block;
-    margin-bottom: 15px;
-    font-weight: 500;
-    color: #ccc;
-  }
-  
-  /* Input fields */
-  form input[type="email"],
-  form input[type="password"] {
-    width: 100%;
-    padding: 12px 14px;
-    border: 1px solid #555;
-    background-color: #7e7d7d46;
-    color: white;
-    border-radius: 8px;
-    font-size: 16px;
-    margin-top: 6px;
-    transition: border-color 0.3s;
-  }
-  
-  form input:focus {
-    border-color: #5d5d5d;
-    outline: none;
-  }
-  
-  /* Submit button */
-  form button {
-    width: 100%;
-    padding: 12px;
-    background-color: #7e7d7d46;
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px;
+  z-index: 1;
+  background-color: #052e1fc7;
+}
 
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 15px;
-    transition: background-color 0.3s ease;
+.signin-page h3 {
+  margin: 0px 0 40px 0;
+  font-size: 28px;
+  color: #ccc;
+}
+
+.form-login-page {
+  background-color: #052e1fd7;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.085);
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 9px #ccc;
+  width: 100%;
+  max-width: 500px;
+  height: 380px;
+  animation: fadeIn 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: justify;
+  justify-content: center;
+  gap: 10px;
+  margin-top: -30px;
+}
+
+.form-login-page label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: 500;
+  color: white;
+}
+
+.form-login-page input[type="email"],
+.form-login-page input[type="password"] {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #555;
+  background-color: #7e7d7d46;
+  color: white;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-top: 6px;
+  transition: border-color 0.3s;
+}
+
+.form-login-page input:focus {
+  border-color: #5d5d5d;
+  outline: none;
+}
+
+.form-login-page button {
+  width: 100%;
+  padding: 12px;
+  background-color: #7e7d7d46;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.form-login-page button:hover {
+  background-color: #3f3f3f;
+}
+
+.error {
+  color: #ffdf6b;
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+.signup-link {
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: #ccc;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
+  color: #a0a0a0;
+}
+
+.signup-link button {
+  width: 100%;
+  padding: 12px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid #666;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease, border-color 0.3s;
+}
+
+.signup-link button:hover {
+  background-color: #444;
+  border-color: #aaa;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  form button:hover {
-    background-color: #3f3f3f;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  /* Error message */
-  .error {
-    color: #ff6b6b;
-    margin-top: 15px;
-    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .video-section {
+    display: none;
   }
-  
-  /* Link below the form */
-  .signup-link {
-    display: block;
-    margin-top: 20px;
-    text-align: center;
-    text-decoration: none;
-    color: #ccc;
+
+  .login-container {
+    flex-direction: column;
   }
-  
-  .signup-link:hover {
-    text-decoration: underline;
-    color: #a0a0a0;
-  }
-  
-  /* Sign up button inside link */
-  .signup-link button {
+
+  .signin-page {
     width: 100%;
-    padding: 12px;
-    background-color: transparent;
-    color: white;
-    border: 1px solid #666;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: background-color 0.3s ease, border-color 0.3s;
+    padding: 20px;
+    height: auto;
   }
-  
-  .signup-link button:hover {
-    background-color: #444;
-    border-color: #aaa;
+  .signin-page h3 {
+    margin-top: 15px;
   }
-  
-  /* Fade-in animation */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
+}

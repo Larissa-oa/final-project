@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react'
 import {Link, useNavigate } from "react-router-dom";
 import {AuthContext} from "../contexts/AuthContext"
 import axios from 'axios';
+import nature from "../assets/images/nature.mp4"
 import "./LoginPage.css"
 
 const LoginPage = () => {
@@ -32,9 +33,17 @@ function handleLogin(event) {
 }
 
   return (
+    <div className="login-container">
+    <div className="video-section">
+      <video className="background-video" autoPlay muted loop>
+        <source src={nature} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
     <div className ="signin-page">
       <h3>Access Your Account</h3>
-      <form onSubmit={handleLogin}>
+      <form className="form-login-page" onSubmit={handleLogin}>
           <label>
               Email:
               <input type="email" placeholder="enter an email"
@@ -51,9 +60,11 @@ function handleLogin(event) {
       
       <p>
       <Link className="signup-link" to="/signup">
-       <button>Sign Up</button>
+      <p>Not yet an user?</p>
+       <button> Sign Up</button>
       </Link>
       </p>
+    </div>
     </div>
   )
 }
