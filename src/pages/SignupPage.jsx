@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import "./SignupPage.css"
+import nature from "../assets/images/nature.mp4"
 
 const SignupPage = () => {
   const [username, setUsername] = useState('')
@@ -48,6 +49,14 @@ const SignupPage = () => {
   
 
   return (
+    <div className="signup-container">
+        <div className="video-section">
+          <video className="background-video" autoPlay muted loop>
+            <source src={nature} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+    
     <div className ="signup-container-page">
       <h3>Sign Up with us</h3>
       <form className="signup-form" onSubmit={handleSignup}>
@@ -81,6 +90,7 @@ const SignupPage = () => {
       <Link className="go-to-login" to="/login">
         <button>LogIn</button>
       </Link>
+    </div>
     </div>
   )
 }

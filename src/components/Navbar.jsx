@@ -70,6 +70,7 @@ const Navbar = () => {
           <Leaf className="icon" />
           About us
         </NavLink>
+
         <NavLink
           to="/profile"
           className={({ isActive }) =>
@@ -80,9 +81,9 @@ const Navbar = () => {
           Profile
         </NavLink>
 
-        <NavLink
+        <NavLink to="/signup"
         onClick={handleLogout}
-          to="/signup"
+          
           className={({ isActive }) =>
             `nav-button ${isActive ? "nav-button-active" : ""}`
           }
