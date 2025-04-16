@@ -34,6 +34,7 @@ html, body {
     background-color: trasparent;
     backdrop-filter: blur(10px);
   }
+  
 
   .author-initials-detail-page {
     margin-top: -500px;
@@ -47,4 +48,19 @@ html, body {
     align-items: center;
     justify-content: flex-end;
     padding-right: 5px;
+  }
+
+  @media (max-width: 480px) {
+    .author-initials-detail-page {
+      display: none;
+    }
+
+    #forum-detail-content h1 {
+      font-size: 1rem;
+    }
+
+    .forum-detail-page-img{
+      height: 20vh;
+    }
+
   }

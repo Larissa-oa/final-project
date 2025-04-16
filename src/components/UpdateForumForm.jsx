@@ -103,11 +103,6 @@ const UpdateForumForm = () => {
                       }
                       alt="User"
                       className="author-image-comment"
-                      style={{
-                        width: "65px",
-                        height: "60px",
-                        borderRadius: "50%",
-                      }} 
                     /> 
                   </span>
                   <span className="author-name">{c.owner?.username || "Anonymous"} <img src={mail}  style={{width: "17px", height:"17px"}} className="mail-to-img"/></span>

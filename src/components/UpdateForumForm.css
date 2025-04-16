@@ -44,6 +44,9 @@
 
   .author-image-comment {
     margin-left: -10px;
+    width: 65px;
+    height: 60px;
+    border-radius: 50%;
   }
 
   .author-name {
@@ -141,3 +144,48 @@
 
 }
 
+@media (max-width: 480px) {
+  .author-image-comment {
+    margin-left: -10px;
+    width: 40px;
+    height: 35px;
+    border-radius: 50%;
+  }
+
+  .user-info-form-forum-detail {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8rem;
+  }
+
+  .text-area-comment::placeholder {
+    font-size: 0.8rem;
+  }
+
+  #forum-timestamp-container {
+    font-size: 9px;
+  }
+
+  .label-add-comment {
+    font-size: 0.7rem;
+  }
+
+  .comment-text {
+    font-size: 0.8rem;
+  }
+
+  .delete-comment-btn img {
+    width: 15px;
+    height: 15px;
+  }
+
+  .post-btn img {
+    height : 25px;
+    width: 25px;
+    margin-left: 20px;
+  }
+
+  .add-comment-container label{
+    height: 90px;
+  }
+}

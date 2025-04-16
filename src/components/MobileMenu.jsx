@@ -2,6 +2,7 @@
 import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 import { X } from "lucide-react";
+import "./MobileMenu.css"
 
 const MobileMenuPortal = ({ sections, onClose }) => {
   return createPortal(
@@ -25,7 +26,7 @@ const MobileMenuPortal = ({ sections, onClose }) => {
         ))}
       </div>
     </div>,
-    document.body // 👈 renders the menu at the top of the body, outside all other elements
+    document.body 
   );
 };
 

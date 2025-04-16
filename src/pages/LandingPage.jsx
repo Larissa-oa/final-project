@@ -74,7 +74,7 @@ const LandingPage = () => {
           <div className="section-overlay"></div>
           <div className="section-content">
             <h1 className="home-title">
-              <span className="home-title-first">Solaris</span>
+              <span id="home-title-first">Solaris</span>
             </h1>
             <p className="home-description">
             Explore, learn, and connect with fellow plant lovers. Grow your knowledge and your garden in our vibrant community.<Sprout className="button-icon" />
