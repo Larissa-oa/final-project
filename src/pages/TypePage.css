@@ -1,4 +1,3 @@
-/* Wrapper for grid */
 .type-wrapper {
   max-width: 1200px;
   margin: 0 auto;
@@ -11,54 +10,29 @@
   );
 }
 
-/* Grid layout for the type cards */
 .type-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 per row */
+  grid-template-columns: repeat(2, 1fr); /* 2 per row for slightly larger screens */
   gap: 1.5rem;
   padding: 2rem 0;
 }
 
-@media (max-width: 900px) {
-  .type-wrapper {
-    padding: 0 1rem;
-  }
-
-  .type-info {
-    aspect-ratio: 1 / 1;
-  }
-
-  .button-container {
-    bottom: 8px;
-    gap: 8px;
-  }
-
-  .type-info button {
-    padding: 6px 10px;
-    font-size: 14px;
-  }
-}
-
-
-
-/* Styling for each card */
 .type-info {
   position: relative;
   width: 100%;
-  aspect-ratio: 1 / 1;
-  overflow: hidden; /* Ensure the image doesn't go outside the container */
+  aspect-ratio: 1 / 1; /* Ensures equal height and width */
+  overflow: hidden;
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
   display: block;
-  height: 100%; /* Keeps the container a consistent size */
+  height: 100%;
 }
 
-/* Ensure image is inside its container correctly */
 .image-container {
   position: relative;
   width: 100%;
   height: 100%;
-  overflow: hidden; /* Ensures the zoom effect is contained within the container */
+  overflow: hidden;
 }
 
 .image-container img {
@@ -70,24 +44,21 @@
   display: block;
 }
 
-/* Zoom effect on hover - zoom image inside its container */
 .type-info:hover .image-container img {
-  transform: scale(1.08); 
+  transform: scale(1.08);
 }
 
-/* Make sure buttons are in a row */
 .button-container {
   display: flex;
-  justify-content: center; 
-  gap: 10px; 
+  justify-content: center;
+  gap: 10px;
   position: absolute;
-  bottom: 10px; 
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
 }
 
-/* Individual button styles */
 .type-info button {
   background-color: rgba(255, 255, 255, 0.7);
   border: none;
@@ -103,17 +74,6 @@
   transform: scale(1.05);
 }
 
-.type-info img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease-in-out;
-  display: block;
-  border-radius: 1rem;
-}
-
-/*********BACK BUTTON!**********/
-
 .back-to-top-btn {
   text-transform: uppercase;
   position: fixed;
@@ -125,7 +85,7 @@
   border: none;
   cursor: pointer;
   transition: opacity 0.3s;
-  z-index: 1100; /* Make sure the button stays above the footer */
+  z-index: 1100;
 }
 
 .back-to-top-btn.hidden {
@@ -138,18 +98,19 @@
   height: 50px;
 }
 
-
-@media (max-width: 600px) {
+@media (max-width: 400px) {
   .type-wrapper {
     padding: 0 0.5rem;
   }
 
   .type-grid {
+    grid-template-columns: 1fr; /* Single column for screens 400px and below */
     gap: 1rem;
   }
 
   .type-info {
-    aspect-ratio: auto; /* Let content adjust height */
+    aspect-ratio: 1 / 1; /* Equal height and width for all cards */
+    height: 200px; /* Set fixed height for consistent card size */
   }
 
   .image-container img {
@@ -157,7 +118,7 @@
   }
 
   .button-container {
-    flex-direction: column; /* Stack buttons vertically if too narrow */
+    flex-direction: column;
     bottom: 10px;
     left: 10px;
     transform: none;
@@ -174,49 +135,4 @@
     width: 40px;
     height: 40px;
   }
-
-
-  .type-grid {
-    grid-template-columns: repeat(2, 1fr); 
-  }
-}
-
-@media (max-width: 600px) {
-  .type-grid {
-    grid-template-columns: 1fr; 
-  }
-    .type-wrapper {
-      padding: 0 0.5rem;
-    }
-  
-    .type-grid {
-      gap: 1rem;
-    }
-  
-    .type-info {
-      aspect-ratio: auto; 
-    }
-  
-    .image-container img {
-      object-fit: cover;
-    }
-  
-    .button-container {
-      flex-direction: column;
-      bottom: 10px;
-      left: 10px;
-      transform: none;
-      align-items: flex-start;
-      gap: 6px;
-    }
-  
-    .type-info button {
-      font-size: 12px;
-      padding: 6px 8px;
-    }
-  
-    .back-to-top-btn img {
-      width: 40px;
-      height: 40px;
-    }
 }

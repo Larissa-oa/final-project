@@ -2,8 +2,18 @@ html, body {
     margin: 0; 
     padding: 0;
     font-family: "Montserrat", sans-serif;
+    height: 100vh;
 }
 
+.forum-detail-page {
+  height: 100vh;
+  background: linear-gradient(
+    to bottom right,
+    var(--color-emerald-950),
+    var(--color-teal-900),
+    var(--color-emerald-950)
+  );
+}
 .forum-detail-page-img  {
     max-height: 300px;
     width: 100%;

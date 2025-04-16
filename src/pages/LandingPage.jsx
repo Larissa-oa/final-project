@@ -74,7 +74,7 @@ const LandingPage = () => {
           <div className="section-overlay"></div>
           <div className="section-content">
             <h1 className="home-title">
-              <span id="home-title-first">Solaris</span>
+              <span className="home-title-first">Solaris</span>
             </h1>
             <p className="home-description">
             Explore, learn, and connect with fellow plant lovers. Grow your knowledge and your garden in our vibrant community.<Sprout className="button-icon" />
@@ -100,8 +100,12 @@ const LandingPage = () => {
 
       {/* Parallax Reveal Section */}
       {showParallax && (
+        
         <div className="section garden-section parallax-reveal">
           {/* Spacer to enable scroll */}
+          <div className="plantbot-img-container">
+    <img src={plantbot} className="plantbot-image"/>
+    </div>
           <div style={{ height: "150vh" }}></div>
 
           <div className="section-overlay"></div>
@@ -153,9 +157,6 @@ const LandingPage = () => {
 
  
 </div>
-    <div className="plantbot-img-container">
-    <img src={plantbot} className="plantbot-image"/>
-    </div>
             {/* Floating elements inside parallax */}
             <div className="floating-wrapper parallax-floating">
               {floatingElements.map((element) => (

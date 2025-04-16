@@ -1,5 +1,9 @@
-.garden-page-total {
+html, body {
   height: 100vh;
+}
+
+.garden-page-total {
+
   background: linear-gradient(
     to bottom right,
     var(--color-emerald-950),
