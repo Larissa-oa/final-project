@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { AuthContext } from '../contexts/AuthContext';   
 import { ForumContext } from '../contexts/ForumContext';
-import "./PopUpCreateForumForm.css"
+import "./PopupCreateForumForm.css"
 
 
 const PopUpCreateForumForm = ({closeModal}) => {
