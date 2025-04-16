@@ -113,7 +113,7 @@ const UpdateForumForm = () => {
                   <span className="author-name">{c.owner?.username || "Anonymous"} <img src={mail}  style={{width: "17px", height:"17px"}} className="mail-to-img"/></span>
                 </div>
                 <p className="comment-text">{c.text}</p>
-                <p className="forum-timestamp">{formatTimestamp(c.createdAt)}</p>
+                <p id="forum-timestamp-container">{formatTimestamp(c.createdAt)}</p>
                 <button onClick={() => handleDeleteComment(c._id)} className="delete-comment-btn">
                   <img src={bin} alt="Delete" />
                 </button>

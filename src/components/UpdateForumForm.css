@@ -118,7 +118,7 @@
     z-index: 100;
 }
 
-.forum-timestamp {
+#forum-timestamp-container {
   color: rgb(196, 196, 196);
   font-size: 09.rem;
 }

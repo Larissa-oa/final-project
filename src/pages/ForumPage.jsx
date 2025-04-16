@@ -78,7 +78,7 @@ const ForumPage = () => {
               </div>
               <div className="forum-card-description">
              <p>{topic.description}</p>
-             <p id="forum-timestamp">
+             <p id="forum-timestamp-container">
                     {formatTimestamp(topic.createdAt)}
                       </p>
               {topic.author ? (<span className="author-info-main-page">

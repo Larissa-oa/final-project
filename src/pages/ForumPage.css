@@ -244,7 +244,7 @@ font-family: "Montserrat", sans-serif;
     margin-right: 6px;
   }
 
-  #forum-timestamp {
+  #forum-timestamp-container {
     color: rgb(196, 196, 196);
     font-size: 09.rem;
   }
