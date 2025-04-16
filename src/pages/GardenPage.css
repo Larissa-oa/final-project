@@ -3,7 +3,7 @@ html, body {
 }
 
 .garden-page-total {
-
+  height: 100vh;
   background: linear-gradient(
     to bottom right,
     var(--color-emerald-950),

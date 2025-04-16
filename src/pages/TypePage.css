@@ -1,5 +1,7 @@
+html, body {
+  height: 100vh;
+}
 .type-wrapper {
-  max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
   background: linear-gradient(
@@ -15,6 +17,7 @@
   grid-template-columns: repeat(2, 1fr); /* 2 per row for slightly larger screens */
   gap: 1.5rem;
   padding: 2rem 0;
+
 }
 
 .type-info {
