@@ -1,19 +1,22 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { Leaf, Sun, Sprout, Trees, Menu } from "lucide-react";
 import MobileMenuPortal from "./MobileMenu";
 import "../pages/LandingPage.css";
 import "./Navbar.css";
+import { AuthContext } from '../contexts/AuthContext';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-
+  const {isLoggedIn, handleLogout} = useContext(AuthContext);
   const sections = [
     { id: "home", label: "Homepage", icon: <Trees className="icon" />, link: "/" },
     { id: "about", label: "Forum", icon: <Sprout className="icon" />, link: "/forum" },
     { id: "profile", label: "Profile", icon: <Leaf className="icon" />, link: "/profile" },
     { id: "skills", label: "Our Garden", icon: <Sun className="icon" />, link: "/garden" },
     { id: "contact", label: "About us", icon: <Leaf className="icon" />, link: "/about" },
+    { id: "signup", label: "Signup", icon: <Leaf className="icon" />, link: "/signup" },
+   
   ];
 
   return (
@@ -76,6 +79,26 @@ const Navbar = () => {
           <Leaf className="icon" />
           Profile
         </NavLink>
+
+        <NavLink
+        onClick={handleLogout}
+          to="/signup"
+          className={({ isActive }) =>
+            `nav-button ${isActive ? "nav-button-active" : ""}`
+          }
+        >
+         {isLoggedIn ? (
+        <>
+          Logout
+        </>
+      ) : (
+        <>
+         Signup
+        </>
+      )}
+        </NavLink>
+
+        
       </nav>
 
       {/* Mobile Menu Button */}
@@ -85,6 +108,8 @@ const Navbar = () => {
       >
         <Menu className="menu-icon" />
       </button>
+
+      
 
       {/* Mobile Menu Portal */}
       {menuOpen && (
