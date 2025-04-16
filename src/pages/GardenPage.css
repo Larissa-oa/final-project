@@ -1,3 +1,7 @@
+.garden.page-total {
+  height: 100vh;
+}
+
 .garden-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));

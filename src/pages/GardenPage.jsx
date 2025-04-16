@@ -9,7 +9,7 @@ const {types} = useContext(TypeContext)
 
 
   return (
-    <div>
+    <div  clasName="garden-page-total">
           <h2 className="section-title">Garden</h2>
           <div className="garden-grid">
             {types && types.map((oneType) =>{

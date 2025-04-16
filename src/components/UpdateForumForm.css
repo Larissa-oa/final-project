@@ -120,7 +120,7 @@
 
 #forum-timestamp-container {
   color: rgb(196, 196, 196);
-  font-size: 09.rem;
+  font-size: 14px;
 }
 
 @media (max-width: 1180px) {
