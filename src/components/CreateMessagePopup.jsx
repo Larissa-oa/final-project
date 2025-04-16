@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import {MessageContext, useMessages } from '../contexts/MessageContext';
-import "./CreateMessagePopup.css"
+import "./CreateMessagePopUp.css"
 import post from "../assets/images/post.png"
 import { AuthContext } from '../contexts/AuthContext';
 
