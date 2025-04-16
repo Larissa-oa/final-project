@@ -1,0 +1,28 @@
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh; /* full height of viewport (safe for mobile) */
+  }
+  
+  .content {
+    flex: 1; /* fills the space between header and footer */
+  }
+  main {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    height: auto;
+  }
+  /* Optional: reset layout margin/padding */
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+
+  main, footer {
+    border: none;
+    box-shadow: none;
+  }
+
+
+  

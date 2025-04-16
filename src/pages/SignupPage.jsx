@@ -47,6 +47,7 @@ const SignupPage = () => {
     }
   }
   return (
+    <div className="page-wrapper">
     <div className="signup-container">
         <div className="video-section-signup">
           <video className="background-video-signup" autoPlay muted loop>
@@ -68,7 +69,6 @@ const SignupPage = () => {
         <label htmlFor="profileImage">
           Profile Image:
             <input 
-            value = {FormData.profileImage}
               type="file" 
               name="profileImage" 
               required 
@@ -98,7 +98,7 @@ const SignupPage = () => {
   </div>
 </div>
 </div>
-
+</div>
   )
 }
 

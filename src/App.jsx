@@ -21,8 +21,9 @@
   function App() {
 
     return (
-    <>
+    <div className="page-wrapper">
       <Navbar />
+  <main className="content">
           <Routes>
               <Route path="/" element={<LandingPage/>} />
               <Route path="/signup" element={<SignupPage/>} />
@@ -43,8 +44,9 @@
               <Route path="/type-details/:plantsType/:itemId" element={<PlantCard/>} />
               <Route path="/*" element={<NotFoundPage/>} />
           </Routes>
+          </main>
       <Footer />
-  </>
+  </div>
     )
   }
 

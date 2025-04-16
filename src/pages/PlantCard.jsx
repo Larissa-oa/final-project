@@ -29,7 +29,7 @@ const PlantCard = () => {
   
 
   return (
-    <div className="plant-card">
+    <div className="plant-card-wrapper">
       {isMushroom ? (
         <div className="plants-card">
            <h2>{foundPlant.name}</h2>

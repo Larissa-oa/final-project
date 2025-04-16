@@ -1,4 +1,4 @@
-import React, { useContext} from 'react'
+import React, { useContext, useEffect} from 'react'
 import "./GardenPage.css"
 import { Link } from 'react-router-dom'
 import { TypeContext } from '../contexts/TypeContext'
@@ -6,7 +6,9 @@ import { TypeContext } from '../contexts/TypeContext'
 
 const GardenPage = () => {
 const {types} = useContext(TypeContext)
-
+useEffect(() => {
+  window.scrollTo(0, 0);
+}, []);
 
   return (
     <div  className="garden-page-total">
