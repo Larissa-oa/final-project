@@ -54,7 +54,7 @@ const AuthContextWrapper = ({children}) =>{
     async function handleLogout() {
         localStorage.removeItem("authToken");
         await authenticateUser();
-        nav("/login");
+       
       }
       return(
         <AuthContext.Provider

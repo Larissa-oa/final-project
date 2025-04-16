@@ -14,16 +14,26 @@
 }
 
 @media (max-width: 900px) {
-  .type-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 per row for tablet */
+  .type-wrapper {
+    padding: 0 1rem;
+  }
+
+  .type-info {
+    aspect-ratio: 1 / 1;
+  }
+
+  .button-container {
+    bottom: 8px;
+    gap: 8px;
+  }
+
+  .type-info button {
+    padding: 6px 10px;
+    font-size: 14px;
   }
 }
 
-@media (max-width: 600px) {
-  .type-grid {
-    grid-template-columns: 1fr; /* 1 per row for mobile */
-  }
-}
+
 
 /* Styling for each card */
 .type-info {
@@ -120,4 +130,87 @@
 .back-to-top-btn img {
   width: 50px;
   height: 50px;
+}
+
+
+@media (max-width: 600px) {
+  .type-wrapper {
+    padding: 0 0.5rem;
+  }
+
+  .type-grid {
+    gap: 1rem;
+  }
+
+  .type-info {
+    aspect-ratio: auto; /* Let content adjust height */
+  }
+
+  .image-container img {
+    object-fit: cover;
+  }
+
+  .button-container {
+    flex-direction: column; /* Stack buttons vertically if too narrow */
+    bottom: 10px;
+    left: 10px;
+    transform: none;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .type-info button {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+
+  .back-to-top-btn img {
+    width: 40px;
+    height: 40px;
+  }
+
+
+  .type-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row for tablet */
+  }
+}
+
+@media (max-width: 600px) {
+  .type-grid {
+    grid-template-columns: 1fr; /* 1 per row for mobile */
+  }
+    .type-wrapper {
+      padding: 0 0.5rem;
+    }
+  
+    .type-grid {
+      gap: 1rem;
+    }
+  
+    .type-info {
+      aspect-ratio: auto; /* Let content adjust height */
+    }
+  
+    .image-container img {
+      object-fit: cover;
+    }
+  
+    .button-container {
+      flex-direction: column; /* Stack buttons vertically if too narrow */
+      bottom: 10px;
+      left: 10px;
+      transform: none;
+      align-items: flex-start;
+      gap: 6px;
+    }
+  
+    .type-info button {
+      font-size: 12px;
+      padding: 6px 8px;
+    }
+  
+    .back-to-top-btn img {
+      width: 40px;
+      height: 40px;
+    }
 }

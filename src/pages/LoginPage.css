@@ -36,11 +36,11 @@
 .signin-page h3 {
   margin: 0px 0 40px 0;
   font-size: 28px;
-  color: #ccc;
+  color: #e6e3e3;
 }
 
 .form-login-page {
-  background-color: #052e1fd7;
+  background-color: #e6e3e3;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.085);
   padding: 30px 40px;
@@ -62,7 +62,7 @@
   display: block;
   margin-bottom: 15px;
   font-weight: 500;
-  color: white;
+  color: #052e1fd7;
 }
 
 .form-login-page input[type="email"],
@@ -71,7 +71,7 @@
   padding: 12px 14px;
   border: 1px solid #555;
   background-color: #7e7d7d46;
-  color: white;
+  color: #052e1fd7;
   border-radius: 8px;
   font-size: 16px;
   margin-top: 6px;
@@ -87,7 +87,7 @@
   width: 100%;
   padding: 12px;
   background-color: #7e7d7d46;
-  color: white;
+  color: #052e1fd7;
   border: none;
   border-radius: 8px;
   font-size: 16px;
@@ -98,7 +98,7 @@
 }
 
 .form-login-page button:hover {
-  background-color: #3f3f3f;
+  background-color: #949393;
 }
 
 .error {
@@ -123,8 +123,8 @@
 .signup-link button {
   width: 100%;
   padding: 12px;
-  background-color: transparent;
-  color: white;
+  background-color: #e6e3e3;
+  color: #052e1fd7;
   border: 1px solid #666;
   border-radius: 8px;
   font-size: 16px;
@@ -135,7 +135,7 @@
 }
 
 .signup-link button:hover {
-  background-color: #444;
+  background-color: #9f9f9f;
   border-color: #aaa;
 }
 

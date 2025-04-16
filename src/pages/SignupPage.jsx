@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import "./SignupPage.css"
+import waterfall from "../assets/images/signup.mp4"
 
 const SignupPage = () => {
   const [username, setUsername] = useState('')
@@ -45,18 +46,27 @@ const SignupPage = () => {
       console.log("Error during signup:", error);
     }
   }
-  
-
   return (
-    <div className ="signup-container-page">
-      <h3>Sign Up with us</h3>
+    <div className="signup-container">
+        <div className="video-section-signup">
+          <video className="background-video-signup" autoPlay muted loop>
+            <source src={waterfall} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+    
+        <div className="signup-page">
+  <div className="signup-content">
+    <h3>Sign Up with us</h3>
+    <div className='signup-form-container'>
       <form className="signup-form" onSubmit={handleSignup}>
         <label>
           Username:
           <input type="text" placeholder="enter a username" 
           value= {username} onChange={(e) =>{setUsername(e.target.value)}}/>
         </label>
-        <label htmlFor="profileImage">Category Image URL</label>
+        <label htmlFor="profileImage">
+          Profile Image:
             <input 
             value = {FormData.profileImage}
               type="file" 
@@ -65,6 +75,7 @@ const SignupPage = () => {
               placeholder="Enter a profile image" 
               onChange={(e) => setProfileImage(e.target.files[0])}
             />
+        </label>
         <label>
           Email: 
           <input type="email" placeholder="enter your email"  
@@ -76,12 +87,18 @@ const SignupPage = () => {
           value= {password} onChange={(e) => {setPassword(e.target.value)}} /> {/*controled component*/}
         </label>
         <button>SignUp!</button>
-      </form>
+        </form>
+    </div>
+    <div className='go-to-login-container'>
       <p>Already a member?</p> 
       <Link className="go-to-login" to="/login">
         <button>LogIn</button>
       </Link>
     </div>
+  </div>
+</div>
+</div>
+
   )
 }
 
