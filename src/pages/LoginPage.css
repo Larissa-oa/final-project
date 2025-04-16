@@ -1,13 +1,26 @@
-.login-container {
+/* layout base */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
   display: flex;
-  height: 100vh;
-  width: 100%;
+  flex-direction: column;
+}
+.login-container {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  min-height: 0;
+  overflow-y: auto; /* allow scrolling on smaller screens */
 }
 
 .video-section {
   width: 35%;
-  height: 100%;
+  height: auto; /* instead of 100% to match viewport */
   position: relative;
+  flex-shrink: 0;
+  z-index: 1;
 }
 
 .background-video {
@@ -19,6 +32,7 @@
   object-fit: cover;
   opacity: 0.6;
   box-shadow: 4px 0 20px rgba(0, 0, 0, 0.4);
+  z-index: 0; 
 }
 
 .signin-page {
