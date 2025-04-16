@@ -10,25 +10,28 @@ import "./ProfilePage.css";
 import { Link } from 'react-router-dom';
 
 const ProfilePage = () => {
-  const [message, setMessage] = useState('');
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [selectedUser, setSelectedUser] = useState(null);
-  const { favorites } = useFavorites();
-  const { messages, fetchMessages, deleteMessage } = useMessages();
+  const { favorites, removeFavorite, fetchFavorites } = useFavorites();
+  const { messages, fetchMessages } = useMessages();
   const { currentUser } = useContext(AuthContext);
 
   const openPopup = (sender) => {
     setSelectedUser(sender);
     setIsPopupOpen(true);
   };
-  
+
   const closePopup = () => {
     setIsPopupOpen(false);
     setSelectedUser(null);
   };
-  
+
   useEffect(() => {
     fetchMessages();
+  }, []);
+
+  useEffect(() => {
+    fetchFavorites(); 
   }, []);
 
   return (
@@ -46,6 +49,7 @@ const ProfilePage = () => {
       </div>
 
       <section className="user-fav-content">
+        {/* Inbox Section */}
         <div id="user-mail-container">
           <h2>Inbox</h2>
           <span className="mail-message-container">
@@ -55,12 +59,16 @@ const ProfilePage = () => {
                   <li key={currentMessage._id} className="message-item">
                     <div className="message-container">
                       <span className="mail-back-to" onClick={() => openPopup(currentMessage.sender_id)}>
-                        <img src={currentMessage.sender_id.profileImage} style={{width: "40px", height: "35px", borderRadius: "50%"}}/>
-                        <strong>{currentMessage.sender_id.username}</strong>, says: 
+                        <img
+                          src={currentMessage.sender_id.profileImage}
+                          style={{ width: "40px", height: "35px", borderRadius: "50%" }}
+                          alt="Sender"
+                        />
+                        <strong>{currentMessage.sender_id.username}</strong>, says:
                       </span>
                       <p>{currentMessage.message_body}</p>
                       <button className="delete-mail-btn" onClick={() => deleteMessage(currentMessage._id)}>
-                        <img src={bin} style={{width: "17px", height: "17px"}} />
+                        <img src={bin} alt="Delete" style={{ width: "17px", height: "17px" }} />
                       </button>
                     </div>
                   </li>
@@ -72,30 +80,43 @@ const ProfilePage = () => {
           </span>
         </div>
 
-        <div className="fav-plant-card">
-          <h2 className="personal-garden">Your Personal Garden</h2>
-          {favorites.length > 0 ? (
-            <div className="favorite-grid">
-              {favorites.map((item) => (
-             <Link
-             to={`/type-details/${item.type === 'mushroom' ? 'mushroom' : 'plants'}/${item._id}`}
-             className="favorite-link"
-             key={item._id}
-           >
-             <div className="favorite-card">
-               <h4>{item.name}</h4>
-               <img src={item.image} alt={item.name} />
-               <p>{item.scientific_name}</p>
-             </div>
-           </Link>
-              ))}
-            </div>
-          ) : (
-            <p>No favorites yet!</p>
-          )}
-        </div>
+       {/* Favorites Section */}
+<div className="fav-plant-card">
+  <h2 className="personal-garden">Your Personal Garden</h2>
+  {favorites.length > 0 ? (
+    <div className="favorite-grid">
+      {favorites.map((item) => {
+        if (!item || !item.type) {
+          console.warn("Missing or broken favorite item:", item);
+          return null;
+        }
+
+        return (
+          <div className="favorite-card" key={item._id}>
+            <Link
+              to={`/type-details/${
+                item.type.toLowerCase().includes("mushroom") ? "mushroom" : "plants"
+              }/${item._id}`}
+              className="favorite-link"
+            >
+              <h4>{item.name}</h4>
+              <img src={item.image} alt={item.name} />
+              <p>
+                <em>{item.scientific_name}</em>
+              </p>
+            </Link>
+            <button onClick={() => removeFavorite(item.favoriteId)}>Remove</button>
+          </div>
+        );
+      })}
+    </div>
+  ) : (
+    <p>No favorites yet!</p>
+  )}
+</div>
       </section>
 
+      {/* Message Popup */}
       {selectedUser && (
         <CreateMessagePopup
           isOpen={isPopupOpen}

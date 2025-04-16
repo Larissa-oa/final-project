@@ -65,6 +65,7 @@ const TypePage = () => {
                     <button>Details</button>
                   </Link>
                   <button onClick={() => addFavorite(mushroom)}>Favorites</button>
+
                 </div>
               </div>
             ))
@@ -86,6 +87,7 @@ const TypePage = () => {
                   <button>Details</button>
                 </Link>
                 <button onClick={() => addFavorite(plant)}>Favorites</button>
+
               </div>
             </div>
           ))

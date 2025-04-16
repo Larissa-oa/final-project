@@ -8,7 +8,7 @@ const TypeContextWrapper = ({ children }) => {
     const nav = useNavigate();
     const [types, setTypes] = useState([]);
     const [plants, setPlants] = useState([]);
-    const [mushrooms, setMushrooms] = useState([]);
+   
     
     //*************GET ALL TYPES *****************/
 
