@@ -60,7 +60,7 @@ function handleLogin(event) {
       
       <p>
       <Link className="signup-link" to="/signup">
-      <p>Not yet an user?</p>
+      <p>Not yet a user?</p>
        <button> Sign Up</button>
       </Link>
       </p>
