@@ -3,6 +3,12 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
+  background: linear-gradient(
+    to bottom right,
+    var(--color-emerald-950),
+    var(--color-teal-900),
+    var(--color-emerald-950)
+  );
 }
 
 /* Grid layout for the type cards */
@@ -66,18 +72,18 @@
 
 /* Zoom effect on hover - zoom image inside its container */
 .type-info:hover .image-container img {
-  transform: scale(1.08); /* Zoom effect on hover */
+  transform: scale(1.08); 
 }
 
 /* Make sure buttons are in a row */
 .button-container {
   display: flex;
-  justify-content: center; /* Centers the buttons horizontally */
-  gap: 10px; /* Adds space between the buttons */
+  justify-content: center; 
+  gap: 10px; 
   position: absolute;
-  bottom: 10px; /* Position buttons at the bottom */
+  bottom: 10px; 
   left: 50%;
-  transform: translateX(-50%); /* Centers them horizontally */
+  transform: translateX(-50%);
   z-index: 2;
 }
 
@@ -171,13 +177,13 @@
 
 
   .type-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 per row for tablet */
+    grid-template-columns: repeat(2, 1fr); 
   }
 }
 
 @media (max-width: 600px) {
   .type-grid {
-    grid-template-columns: 1fr; /* 1 per row for mobile */
+    grid-template-columns: 1fr; 
   }
     .type-wrapper {
       padding: 0 0.5rem;
@@ -188,7 +194,7 @@
     }
   
     .type-info {
-      aspect-ratio: auto; /* Let content adjust height */
+      aspect-ratio: auto; 
     }
   
     .image-container img {
@@ -196,7 +202,7 @@
     }
   
     .button-container {
-      flex-direction: column; /* Stack buttons vertically if too narrow */
+      flex-direction: column;
       bottom: 10px;
       left: 10px;
       transform: none;

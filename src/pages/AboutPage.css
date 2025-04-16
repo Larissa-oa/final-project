@@ -5,6 +5,12 @@
     flex-direction: column;
     padding: 1.5rem;
     position: relative;
+    background: linear-gradient(
+      to bottom right,
+      var(--color-emerald-950),
+      var(--color-teal-900),
+      var(--color-emerald-950)
+    );
   }
   
   @media (min-width: 768px) {

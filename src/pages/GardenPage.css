@@ -1,5 +1,17 @@
-.garden.page-total {
+.garden-page-total {
   height: 100vh;
+  background: linear-gradient(
+    to bottom right,
+    var(--color-emerald-950),
+    var(--color-teal-900),
+    var(--color-emerald-950)
+  );
+  
+}
+
+.garden-page-total h2 {
+  padding-top: 20px;
+  text-align: center;
 }
 
 .garden-grid {
