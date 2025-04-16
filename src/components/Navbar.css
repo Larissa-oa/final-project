@@ -171,3 +171,11 @@
   .nav-button {
     text-decoration: none;
   }
+
+  @media (max-width: 580px) {
+  .mobile-menu-item {
+    font-size:0.8rem;
+    gap: 0.4rem;
+  }
+
+  }
