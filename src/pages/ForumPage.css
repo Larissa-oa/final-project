@@ -30,14 +30,17 @@ html, body {
 .forum-section {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   padding: 1.5rem;
-  background: linear-gradient(
-    to bottom right,
-    var(--color-emerald-950),
-    var(--color-teal-900),
-    var(--color-emerald-950)
-  );
+ 
+}
+.topic-card {
+  max-width: 400px;
+}
+.topics-list {
+  width: 90vw;
+  padding: 0 10px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 @media (min-width: 768px) {
@@ -175,14 +178,7 @@ input::placeholder {
 }
 
 /* cards */
-.topics-list {
-  background: linear-gradient(
-    to bottom right,
-    var(--color-emerald-950),
-    var(--color-teal-900),
-    var(--color-emerald-950)
-  );
-}
+
 .topic-card {
   position: relative;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -257,7 +253,7 @@ input::placeholder {
   font-family: "Montserrat", sans-serif;
   position: absolute;
   right: 10px;
-  top: 260px;
+  top: 150px;
 }
 
 .author-info-main-page {
@@ -500,4 +496,3 @@ input::placeholder {
     margin-top: 25px;
   }
 }
-

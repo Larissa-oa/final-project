@@ -5,8 +5,11 @@ html, body {
     height: 100vh;
 }
 
+.comment-text {
+  padding: 0 5px;
+}
 .forum-detail-page {
-  height: 100vh;
+
   background: linear-gradient(
     to bottom right,
     var(--color-emerald-950),
@@ -14,6 +17,7 @@ html, body {
     var(--color-emerald-950)
   );
 }
+
 .forum-detail-page-img  {
     max-height: 300px;
     width: 100%;
@@ -28,6 +32,7 @@ html, body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     padding: 15px 25px;
     margin-top: -5px;
+   
 }
 
 #author-detail-content {

@@ -12,12 +12,12 @@ html, body {
   flex-direction: row;
   flex-wrap: wrap;
   min-height: 0;
-  overflow-y: auto; /* allow scrolling on smaller screens */
+  overflow-y: auto; 
 }
 
 .video-section {
   width: 35%;
-  height: auto; /* instead of 100% to match viewport */
+  height: auto;
   position: relative;
   flex-shrink: 0;
   z-index: 1;
@@ -44,7 +44,7 @@ html, body {
   flex-direction: column;
   padding: 40px;
   z-index: 1;
-  background-color: #052e1fc7;
+  background-color: transparent;
 }
 
 .signin-page h3 {
