@@ -46,7 +46,7 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #052e1fc7;
+  background-color: transparent;
   padding: 40px;
   box-sizing: border-box; /* Ensure padding doesn't cause overflow */
 }
