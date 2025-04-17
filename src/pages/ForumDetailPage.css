@@ -5,6 +5,9 @@ html, body {
     height: 100vh;
 }
 
+.comment-text {
+  padding: 0 5px;
+}
 .forum-detail-page {
 
   background: linear-gradient(
