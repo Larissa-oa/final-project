@@ -2,6 +2,7 @@
     width: 100%;
     max-width: 480px;
     height: 65%;
+    max-height: 600px;
     margin: 2rem auto;
     border-radius: 12px;
     border: 1px solid #d8eedd;
