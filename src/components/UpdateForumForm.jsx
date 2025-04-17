@@ -111,9 +111,9 @@ const UpdateForumForm = () => {
                 </div>
                 <p className="comment-text">{c.text}</p>
                 <p id="forum-timestamp-container">{formatTimestamp(c.createdAt)}</p>
-              {isLoggedIn && currentUser?._id === topic.author?._id && (
+              {isLoggedIn && currentUser?._id === c.owner?._id && (
                 <button onClick={() => handleDeleteComment(c._id)} className="delete-comment-btn">
-                  <img src={bin} alt="Delete" />
+                  {/* <img src={bin} alt="Delete" /> */} ALLA
                 </button>
               )}         
 
