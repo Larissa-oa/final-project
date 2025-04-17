@@ -4,6 +4,12 @@ html, body {
   padding: 0;
   overflow-x: hidden;
   overflow-y: scroll;
+  background: linear-gradient(
+    to bottom right,
+    var(--color-emerald-950),
+    var(--color-teal-900),
+    var(--color-emerald-950)
+  );
 }
 
 .forum-section {
