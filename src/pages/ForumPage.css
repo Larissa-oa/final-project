@@ -37,8 +37,8 @@ html, body {
   max-width: 400px;
 }
 .topics-list {
-  width: 90vw;
-  padding: 0 10px;
+  width: 100vw;
+  padding: 0 15px;
   display: flex;
   flex-wrap: wrap;
 }
