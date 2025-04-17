@@ -11,7 +11,7 @@ export const FavoritesProvider = ({ children }) => {
     try {
       const token = localStorage.getItem("authToken");
       const res = await axios.get(
-        `${import.meta.env.VITE_API_URL}/favorites/user-favorites`,
+        `${import.meta.env.VITE_API_URL}/auth/user-favorites`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -36,10 +36,11 @@ export const FavoritesProvider = ({ children }) => {
   const addFavorite = async (item) => {
     try {
       const token = localStorage.getItem("authToken");
-      const itemType = item.type === "mushroom" ? "Mushroom" : "Plant";
+      const itemType = item.type?.toLowerCase() === "mushroom" ? "Mushroom" : "Plant";
+
 
       const res = await axios.post(
-        `${import.meta.env.VITE_API_URL}/favorites/adding`,
+        `${import.meta.env.VITE_API_URL}/auth/adding`,
         {
           item: item._id,
           itemType: itemType,
@@ -63,7 +64,7 @@ export const FavoritesProvider = ({ children }) => {
   try {
     const token = localStorage.getItem("authToken");
 
-    await axios.delete(`${import.meta.env.VITE_API_URL}/favorites/remove/${favoriteId}`, {
+    await axios.delete(`${import.meta.env.VITE_API_URL}/auth/remove/${favoriteId}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

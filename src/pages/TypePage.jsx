@@ -64,7 +64,11 @@ const TypePage = () => {
                   <Link to={`/type-details/mushroom/${mushroom._id}`}>
                     <button>Details</button>
                   </Link>
-                  <button onClick={() => addFavorite(mushroom)}>Favorites</button>
+                  {/* For mushrooms */}
+<button onClick={() => addFavorite({ ...mushroom, type: "Mushroom" })}>
+  Favorites
+</button>
+
 
                 </div>
               </div>
@@ -86,7 +90,10 @@ const TypePage = () => {
                 <Link to={`/type-details/plants/${plant._id}`}>
                   <button>Details</button>
                 </Link>
-                <button onClick={() => addFavorite(plant)}>Favorites</button>
+                {/* For plants */}
+<button onClick={() => addFavorite({ ...plant, type: "Plant" })}>
+  Favorites
+</button>
 
               </div>
             </div>

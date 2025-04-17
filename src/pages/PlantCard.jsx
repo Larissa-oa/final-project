@@ -55,7 +55,7 @@ const PlantCard = () => {
                   <div className="plant-info">
                     <h3>Scientific Name:{foundPlant.scientific_name}</h3>
                     <p><strong>Basic Care:</strong> {foundPlant.basic_care}</p>
-                    <p><strong>Ideal Environment:</strong> {foundPlant.watering_instructions}</p>
+                    <p><strong>Watering Instructions:</strong> {foundPlant.watering_instructions}</p>
                   </div>
               </div>
           </div>
