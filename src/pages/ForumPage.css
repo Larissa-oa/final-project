@@ -123,9 +123,6 @@ html, body {
     width: 380px;
     height: 250px;
   }
-  .follow-btn {
-    
-  }
 }
 
 
@@ -237,7 +234,7 @@ input::placeholder {
   font-family: "Montserrat", sans-serif;
   position: absolute;
   right: 10px;
-  top: 200px;
+  top: 150px;
 }
 
 .author-info-main-page {

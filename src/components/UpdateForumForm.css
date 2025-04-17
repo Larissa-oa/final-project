@@ -2,13 +2,13 @@
 /*comment card*/
 .comment-container { 
     width: 100vw;
-    height: 100vh;
     display: flex; 
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-family: "Montserrat", sans-serif;
     background-color: transparent;
+  
 }
 .comment-card-forum-form {
     background-color: rgb(247, 245, 245);
@@ -22,6 +22,7 @@
     color: black;
     align-items: center;
     background-color: transparent;
+   
 
 }
 
@@ -33,7 +34,7 @@
   flex-direction: column;
     width: 100%;
  
-   
+ 
   }
   
   .comment-card-forum-form li {
@@ -45,6 +46,7 @@
     background-color: white;
     padding: 10px 25px;
     border-radius: 8px;
+    
   }
   
   .user-info-forum-form{
@@ -58,6 +60,7 @@
     width: 65px;
     height: 60px;
     border-radius: 50%;
+
   }
 
   .author-name {
