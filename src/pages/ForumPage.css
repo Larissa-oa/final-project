@@ -17,12 +17,11 @@ html, body {
   flex-direction: row;
   flex-wrap: wrap;
   padding: 1.5rem;
-  background: linear-gradient(
-    to bottom right,
-    var(--color-emerald-950),
-    var(--color-teal-900),
-    var(--color-emerald-950)
-  );
+}
+
+.topics-list {
+  width: 90vw;
+  padding: 0 10px;
 }
 
 @media (min-width: 768px) {
