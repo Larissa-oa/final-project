@@ -117,7 +117,7 @@ const LandingPage = () => {
         <Link to="/forum" className="link-info">
           <div className="feature-text">
             <h3>Our Forum</h3>
-            <p>Join the community, share ideas, and grow together with other eco-tech lovers.</p>
+            <p>Join the community, share ideas, and grow together with other eco-lovers.</p>
           </div>
         </Link>
       </div>
@@ -135,7 +135,7 @@ const LandingPage = () => {
         <Link to="/login" className="link-info">
           <div className="feature-text">
             <h3>PlantBot</h3>
-            <p>Your nature-loving AI companion — ask it anything about your garden or the digital ecosystem.</p>
+            <p>Your nature-loving AI companion — ask it anything about your garden or the the plants that you have and how to take better care of it.</p>
           </div>
         </Link>
       </div>
@@ -143,7 +143,7 @@ const LandingPage = () => {
       <div className="feature-row right">
         <div className="feature-text login-prompt">
           <h3>Log In to Explore</h3>
-          <p>Get access to your garden and connect with PlantBot.</p>
+          <p>Get access to your garden, connect with PlantBot and other plant lovers.</p>
           <Link to="/login" className="link-info">
             <button className="login-button">Log In</button>
           </Link>
