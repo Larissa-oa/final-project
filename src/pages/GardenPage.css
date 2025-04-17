@@ -3,7 +3,7 @@ html, body {
 }
 
 .garden-page-total {
-  min-height: 100dvh; 
+  min-height: 100vh; 
 display: flex;
 flex-direction: column;
   background: linear-gradient(
