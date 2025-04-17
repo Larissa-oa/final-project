@@ -67,9 +67,12 @@ const ProfilePage = () => {
                         <strong>{currentMessage.sender_id.username}</strong>, says:
                       </span>
                       <p>{currentMessage.message_body}</p>
-                      <button className="delete-mail-btn" onClick={() => deleteMessage(currentMessage._id)}>
-                        <img src={bin} alt="Delete" style={{ width: "17px", height: "17px" }} />
-                      </button>
+                      <button 
+                      onClick={() => removeFavorite(item.favoriteId)} 
+                      style={{ border: "none", background: "transparent", padding: 0, cursor: "pointer" }}
+                    >
+                          <img src={bin} alt="Delete" style={{ width: "17px", height: "17px" }} />
+                      </button> 
                     </div>
                   </li>
                 ))}
@@ -86,12 +89,11 @@ const ProfilePage = () => {
   {favorites.length > 0 ? (
     <div className="favorite-grid">
       {favorites.map((item) => {
-        if (!item || !item.type) {
+        if (!item || !item.type || item.type === "Forum"){
           console.warn("Missing or broken favorite item:", item);
           return null;
-        }
-
-        return (
+        } 
+        return(
           <div className="favorite-card" key={item._id}>
             <Link
               to={`/type-details/${
@@ -105,7 +107,50 @@ const ProfilePage = () => {
                 <em>{item.scientific_name}</em>
               </p>
             </Link>
-            <button onClick={() => removeFavorite(item.favoriteId)}>Remove</button>
+            <button 
+            onClick={() => removeFavorite(item.favoriteId)} 
+            style={{ border: "none", background: "transparent", padding: 0, cursor: "pointer" }}
+            >
+              <img src={bin} alt="Delete" style={{ width: "17px", height: "17px" }} />
+            </button>
+          </div>
+          )
+    })
+  }
+    </div>
+  ) : (
+    <p>No favorites yet!</p>
+  )}
+</div>
+
+<div className="fav-plant-card">
+  <h2 className="personal-garden">Your Favorite Topics</h2>
+  {favorites.length > 0 ? (
+    <div className="favorite-grid">
+      {favorites.map((item) => {
+        if (!item || !item.type || item.type !== "Forum") {
+          console.warn("Missing or broken favorite item:", item);
+          return null;
+        }
+      
+        return (
+          <div className="favorite-card" key={item._id}>
+            <Link
+              to={`/type-details/${
+                item.type.toLowerCase().includes("forum") ? "forum" : null
+              }/${item._id}`}
+              className="favorite-link"
+            >
+              <h4>{item.title}</h4>
+              <img src={item.image} alt={item.title} />
+              <br/>
+            </Link>
+            <button 
+  onClick={() => removeFavorite(item.favoriteId)} 
+  style={{ border: "none", background: "transparent", padding: 0, cursor: "pointer" }}
+>
+  <img src={bin} alt="Delete" style={{ width: "17px", height: "17px" }} />
+</button>
           </div>
         );
       })}
@@ -114,6 +159,7 @@ const ProfilePage = () => {
     <p>No favorites yet!</p>
   )}
 </div>
+
       </section>
 
       {/* Message Popup */}

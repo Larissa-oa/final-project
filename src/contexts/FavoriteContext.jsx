@@ -36,7 +36,7 @@ export const FavoritesProvider = ({ children }) => {
   const addFavorite = async (item) => {
     try {
       const token = localStorage.getItem("authToken");
-      const itemType = item.type?.toLowerCase() === "mushroom" ? "Mushroom" : "Plant";
+      const itemType = item.type?.toLowerCase() === "mushroom" ? "Mushroom" : item.type?.toLowerCase() === "forum" ? "Forum" : "Plant" ;
 
 
       const res = await axios.post(

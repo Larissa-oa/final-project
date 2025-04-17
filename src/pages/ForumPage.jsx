@@ -4,13 +4,14 @@ import { PopUpCreateForumForm } from "../components/PopUpCreateForumForm";
 import "./ForumPage.css";
 import bin from "../assets/images/delete.png"
 import { Link } from "react-router-dom";
+import { useFavorites } from "../contexts/FavoriteContext";
 
 
 const ForumPage = () => {
   const { topics, getAllTopics, handleDeleteTopic } = useContext(ForumContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("")
-
+  const { addFavorite } = useFavorites();
   const filteredForums = topics?.filter((forum) =>
     forum.title.toLowerCase().includes(searchTerm.toLowerCase())
   ) || [];
@@ -77,7 +78,8 @@ const ForumPage = () => {
               <img src={topic.image}  className="forum-card-image"/>
               <h3 className="forum-topic-title">{topic.title}</h3>
               </Link>
-              <button className="follow-btn">Follow</button>
+           
+              <button onClick={() => addFavorite({ ...topic, type: "Forum" })} className="follow-btn">Follow</button>
               <button onClick={() => handleDeleteTopic(topic._id)} className="delete-topic-button"><img src={bin}/></button>
               </div>
               <div className="forum-card-description">
