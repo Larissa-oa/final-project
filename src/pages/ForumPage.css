@@ -15,13 +15,16 @@ html, body {
 .forum-section {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   padding: 1.5rem;
+ 
 }
-
+.topic-card {
+  max-width: 400px;
+}
 .topics-list {
   width: 90vw;
   padding: 0 10px;
+  display: flex;
   flex-wrap: wrap;
 }
 
