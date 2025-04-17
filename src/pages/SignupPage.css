@@ -255,4 +255,8 @@ html, body {
   .go-to-login-container {
     padding: 20px;
   }
+
+  .video-section-signup {
+    display: none;
+  }
 }

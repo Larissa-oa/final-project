@@ -4,6 +4,12 @@ html, body {
   padding: 0;
   overflow-x: hidden;
   overflow-y: scroll;
+  background: linear-gradient(
+    to bottom right,
+    var(--color-emerald-950),
+    var(--color-teal-900),
+    var(--color-emerald-950)
+  );
 }
 
 .forum-section {
@@ -154,6 +160,14 @@ input::placeholder {
 }
 
 /* cards */
+.topics-list {
+  background: linear-gradient(
+    to bottom right,
+    var(--color-emerald-950),
+    var(--color-teal-900),
+    var(--color-emerald-950)
+  );
+}
 .topic-card {
   position: relative;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
