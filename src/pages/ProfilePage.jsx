@@ -13,7 +13,7 @@ const ProfilePage = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [selectedUser, setSelectedUser] = useState(null);
   const { favorites, removeFavorite, fetchFavorites } = useFavorites();
-  const { messages, fetchMessages } = useMessages();
+  const { messages, fetchMessages, deleteMessage } = useMessages();
   const { currentUser } = useContext(AuthContext);
 
   const openPopup = (sender) => {
@@ -68,7 +68,7 @@ const ProfilePage = () => {
                       </span>
                       <p>{currentMessage.message_body}</p>
                       <button 
-                      onClick={() => removeFavorite(item.favoriteId)} 
+                      onClick={() => deleteMessage(currentMessage._id)} 
                       style={{ border: "none", background: "transparent", padding: 0, cursor: "pointer" }}
                     >
                           <img src={bin} alt="Delete" style={{ width: "17px", height: "17px" }} />

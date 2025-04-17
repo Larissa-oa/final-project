@@ -12,7 +12,6 @@ const ForumDetailPage = () => {
   const [topic, setTopic] = useState(null);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [selectedUser, setSelectedUser] = useState(null);
-  const {currentUser} = useContext(AuthContext)
 
   useEffect(() => {
     const selectedTopic = topics.find((top) => top._id === id);

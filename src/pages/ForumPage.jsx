@@ -5,6 +5,7 @@ import "./ForumPage.css";
 import bin from "../assets/images/delete.png"
 import { Link } from "react-router-dom";
 import { useFavorites } from "../contexts/FavoriteContext";
+import { AuthContext } from '../contexts/AuthContext';
 
 
 const ForumPage = () => {
@@ -12,6 +13,9 @@ const ForumPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("")
   const { addFavorite } = useFavorites();
+  const {isLoggedIn, currentUser} = useContext(AuthContext);
+
+  
   const filteredForums = topics?.filter((forum) =>
     forum.title.toLowerCase().includes(searchTerm.toLowerCase())
   ) || [];
@@ -78,32 +82,44 @@ const ForumPage = () => {
               <img src={topic.image}  className="forum-card-image"/>
               <h3 className="forum-topic-title">{topic.title}</h3>
               </Link>
-           
-              <button onClick={() => addFavorite({ ...topic, type: "Forum" })} className="follow-btn">Follow</button>
-              <button onClick={() => handleDeleteTopic(topic._id)} className="delete-topic-button"><img src={bin}/></button>
+              {isLoggedIn && (
+                <button onClick={() => addFavorite({ ...topic, type: "Forum" })} className="follow-btn">
+                  Follow
+                </button>
+              )} 
+              {isLoggedIn && currentUser?._id === topic.author?._id && (
+                <button onClick={() => handleDeleteTopic(topic._id)} className="delete-topic-button">
+                  <img src={bin} alt="delete" />
+                </button>
+              )}         
               </div>
               <div className="forum-card-description">
              <p>{topic.description}</p>
              <p id="forum-timestamp-container">
                     {formatTimestamp(topic.createdAt)}
                       </p>
-              {topic.author ? (<span className="author-info-main-page">
-                  {topic.author.profileImage ? (
-                    <img
-                      src={topic.author.profileImage}
-                      alt={topic.author.username}
-                      className="author-avatar-main-page"
-                    />
-                  ) : (
-                    <span className="author-initials-main-page">
-                      {topic.author.username.charAt(0).toUpperCase()}
-                    </span>
-                  )}
-                  {topic.author.username}
-                </span>
-              ) : (
-                "Anonymous"
-              )} 
+                      {topic.author ? (
+  <span className="author-info-main-page">
+    {topic.author.profileImage ? (
+      <img
+        src={topic.author.profileImage}
+        alt={topic.author.username}
+        className="author-avatar-main-page"
+      />
+    ) : (
+      <span className="author-initials-main-page">
+        {topic.author.username.charAt(0).toUpperCase()}
+      </span>
+    )}
+    
+    {/* Show full username normally (without repeating initial) */}
+    <span className="author-username">
+      {topic.author.username.charAt(0).toUpperCase() + topic.author.username.slice(1)}
+    </span>
+  </span>
+) : (
+  "Anonymous"
+)}
               </div>
             </div>
           ))}

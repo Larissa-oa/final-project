@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import "./UpdateForumForm.css";
@@ -7,6 +7,7 @@ import post from "../assets/images/post.png";
 import { format } from 'date-fns';
 import CreateMessagePopup from './CreateMessagePopup';
 import mail from "../assets/images/mail.png" 
+import { AuthContext } from '../contexts/AuthContext';
 
 const UpdateForumForm = () => {
   const { id } = useParams();
@@ -16,6 +17,7 @@ const UpdateForumForm = () => {
   const [reply, setReply] = useState([]);
   const [selectedUser, setSelectedUser] = useState(null);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const {currentUser, isLoggedIn} = useContext(AuthContext)
 
   useEffect(() => {
     axios
@@ -109,9 +111,12 @@ const UpdateForumForm = () => {
                 </div>
                 <p className="comment-text">{c.text}</p>
                 <p id="forum-timestamp-container">{formatTimestamp(c.createdAt)}</p>
+              {isLoggedIn && currentUser?._id === topic.author?._id && (
                 <button onClick={() => handleDeleteComment(c._id)} className="delete-comment-btn">
                   <img src={bin} alt="Delete" />
                 </button>
+              )}         
+
               </li>
             ))}
           </ul>
