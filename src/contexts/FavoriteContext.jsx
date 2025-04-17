@@ -36,29 +36,41 @@ export const FavoritesProvider = ({ children }) => {
   const addFavorite = async (item) => {
     try {
       const token = localStorage.getItem("authToken");
+      if (!token) {
+        console.error("No auth token found!");
+        return;
+      }
+  
       const itemType = item.type?.toLowerCase() === "mushroom" ? "Mushroom" : "Plant";
-
-
-      const res = await axios.post(
+  
+      const response = await axios.post(
         `${import.meta.env.VITE_API_URL}/auth/adding`,
         {
           item: item._id,
-          itemType: itemType,
+          itemType,
         },
         {
           headers: {
             Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json", // 👈 explicit, safe for deployed APIs
           },
+          withCredentials: true, // 👈 just in case backend needs cookies too (optional)
         }
       );
-
-      setFavorites((prev) => [...prev, item]);
-      console.log("Added to favorites:", res.data);
+  
+      // Add full response (with type + favoriteId) to state, not just item
+      const favoriteItem = {
+        ...item,
+        type: itemType,
+        favoriteId: response.data._id, // 👈 allows proper "remove" function later
+      };
+  
+      setFavorites((prev) => [...prev, favoriteItem]);
+      console.log("Added to favorites:", favoriteItem);
     } catch (err) {
-      console.error("Error adding favorite:", err);
+      console.error("Error adding favorite:", err?.response?.data || err.message);
     }
-  };
-
+  };  
 
  const removeFavorite = async (favoriteId) => {
   try {
