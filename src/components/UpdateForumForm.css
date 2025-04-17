@@ -7,6 +7,7 @@
     align-items: center;
     justify-content: center;
     font-family: "Montserrat", sans-serif;
+    background-color: transparent;
 }
 .comment-card-forum-form {
     background-color: rgb(247, 245, 245);
@@ -19,14 +20,19 @@
     font-size: 1rem;
     color: black;
     align-items: center;
+    background-color: transparent;
+
 }
 
 .comment-card-forum-form ul {
     list-style: none;
     padding: 0;
-    margin: 0;
-    display: flex;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
     width: 100%;
+ 
+   
   }
   
   .comment-card-forum-form li {
@@ -34,6 +40,10 @@
     align-items: center;
     justify-content: space-between; 
     width: 100%;
+    margin-top: 10px;
+    background-color: white;
+    padding: 10px 25px;
+    border-radius: 8px;
   }
   
   .user-info-forum-form{

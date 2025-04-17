@@ -124,6 +124,9 @@ html, body {
     width: 380px;
     height: 250px;
   }
+  .follow-btn {
+    
+  }
 }
 
 
@@ -160,14 +163,7 @@ input::placeholder {
 }
 
 /* cards */
-.topics-list {
-  background: linear-gradient(
-    to bottom right,
-    var(--color-emerald-950),
-    var(--color-teal-900),
-    var(--color-emerald-950)
-  );
-}
+
 .topic-card {
   position: relative;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -242,7 +238,7 @@ input::placeholder {
   font-family: "Montserrat", sans-serif;
   position: absolute;
   right: 10px;
-  top: 230px;
+  top: 200px;
 }
 
 .author-info-main-page {
